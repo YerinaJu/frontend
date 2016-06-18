@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>테이블</title>
+	<style>
+
+		/* 축약 요소에 마우스가 올라가면 UI 커서 모양이 도움말(?) 표시로 바뀝니다. */
+		/* []는 속성 선택자 (Attribute Selector) */
+		abbr[title]{cursor:help}
+
+
+
+		/* 테이블디자인 */
+		/* 테이블 사이 공간을 접어둠 */
+		table{border-collapse:collapse}
+
+		/* 테두리 디자인 두께모양(직선) 색(글자 색을 상속) */
+		table,th,td{border:1px solid red}
+
+		
+
+
+	</style>
+</head>
+<body>
+	<h2>문서 메타데이터 표</h2>
+	element
+	description
+
+	<table>
+	<caption>테이블을 설명하는 제목으로, 적절한 제목이 들어와야함.</caption>
+	<!-- cellpadding / cellspacing / border / bgcolor =>표 스타일 속성은 css로 제어하는 것이 좋음.-->
+		<thead>
+			<tr>
+				<th scope="row">Element</th>
+				<th scope="row">Description</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan="2">total score</td>
+			</tr>
+		</tfoot>
+		<!-- 행: table row -->
+		<tr>
+			<!-- 셀 제목: table cell header -->
+			<th>
+				<code>&lt;base&gt;</code>
+			</th>
+			<!-- 셀 내용: table cell data -->
+			<td>
+			<!-- 축약: abbr -->
+			<a target="_blank" href="http://naver.com"><abbr title="Uniform REsource Locator">URL</abbr></a></td>
+		</tr>
+
+	</table>
+	<table summary="본 표는 4행 3열로 구성된 표이며... 각 제목은 각 열에 ㅇㅇㅇ로 구성되어 있습니다.">
+
+	<!-- 
+
+	summary 속성은 html5에서는 없어짐 
+	=> WAI-Area라는 식으로 바꿔서 씁니다.
+		ex) <p id="metadata-table-summary">본 표는 4행 3열로 구성된....</p>
+		<table aria-describedby=""> 
+
+	-->
+		<caption>연습</caption>
+
+		<tr>
+			<td>1행해애행해앻</td>
+			<td>1행해애행해앻</td>
+			<td>1행해애행해앻</td>
+		</tr>
+		<tr>
+			<td colspan="3">1행해애행해앻</td>
+			<!-- <td>1</td>
+			<td>1</td> -->
+		</tr>
+		<tr>
+			<td>1행해애행해앻</td>
+			<td rowspan="2">1행해애행해앻</td>
+			<td>1행해애행해앻</td>
+		</tr>
+		<tr>
+			<td>1행해애행해앻</td>
+		<!-- 	<td>1</td> -->
+			<td>1행해애행해앻</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
