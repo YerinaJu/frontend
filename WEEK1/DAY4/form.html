@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>form</title>
+</head>
+<body>
+	<h2>폼 디자인</h2>
+	<form action="#" method="post" enctype="multipart/form-data" name="register_form">
+	<!-- 중요한 개인정보를 보낼 때는 post방식을 사용합니다. 기본값은 get / action은 데이터를 전송하는 목적지를 가리킵니다. / enctype은 인코딩하는 타입을 정하는데, 파일을 업로드할 시에만 씁니다. 평소에는 안씁니다. -->
+	<p>
+	<!-- input의 암묵적 레이블 -->
+		<label>ID:<input type="text"></label>
+	<!-- 명시적 레이블 -->
+		<label for="user_id">ID</label>:<input id="user_id" name="user_id" type="text">
+	</p>
+	<p><label for="user_pw">pw</label>:<input type="password" name="user_pw" id="user_pw"></p>
+	<p><label for="user_email">email</label><input type="email" name="user_email" id="user_email"></p>
+	<p>
+		<button type="submit">전송</button>
+		<button type="reset">리셋</button>
+
+	</p>
+	</form>
+</body>
+</html>
