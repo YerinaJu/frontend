@@ -23,7 +23,7 @@
   - target : 링크를 눌렀을 때 새 페이지를 띄울 것인지 정할 수 있다. (_blank; 새 창 띄우기)
   - shape : map 모양 rect / cir / poly <br>
   - coords : 좌표값 rect: x1,y1,x2,y2 <br> 
-  - title : 마우스를 갖다대면 툴팁으로 타이틀 값을 확인할 수 있다. 모바일에서는 지원하지 않는다. <br>
+  - title : 마우스를 갖다대면 툴팁으로 타이틀 값을 확인할 수 있다. 모바일에서는 지원하지 않는다.
 * 만약 이미지맵이 서로 겹쳐질 경우 먼저 정의된 영역이 우선시 된다. <br>
 * 관련 사이트 <br>
  - [이미지 맵 코드 생성](https://github.com/summerstyle/summer)
