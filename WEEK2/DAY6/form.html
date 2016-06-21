@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+</head>
+<body>
+	<form action="#" method="GET" enctype="#" name="register">
+	<!-- name은 form별로 구분 짓기 위해서 쓰면 좋습니다. -->
+		<fieldset>
+			<legend>1번 폼</legend>
+			<div>
+				<label for="register-id">id</label>
+				<input type="text" id="register-id" name="register-id">
+			</div>
+			<div>
+				<label for="register-pass">password</label>
+				<input type="password" id="register-pass" name="register-pass" value="password">
+			</div>
+			<button type="submit"><img src="">제출</button>
+			<input type="submit" value="제출">
+			<!-- input의 value값을 주지 않으면 브라우저마다 버튼의 값이 달라지게 됩니다. 파폭에선 질의보내기 크롬에선 제출 둘 중 어느 걸 써도 차이가 없습니다.-->
+			
+			<div>
+				<!-- <label for="register-gender">gender</label> -->
+				<input id="gender-male" name="register-gender-a" type="radio" value="1"><label for="gender-male">Male</label>
+				<input id="gender-female" name="register-gender-a" type="radio" value="2"><label for="gender-female">Female</label>
+				<!-- 명시적인 방법 -->
+				<hr>
+				<label><input name="register-gender-b" type="radio" value="3" checked>Male</label>
+				<label><input name="register-gender-b" type="radio" vlaue="4">Female</label>
+				<!-- 암묵적인 방법 -->
+				<!-- 라디오나 체크박스를 사용할 때는 각각 id값으로 지정해주기 힘들기 때문에 이 편이 더 유리하다 -->			
+			</div>
+			<div>
+				<h2>computer</h2>
+				<ul>				
+				<li>
+					<label><input checked="check" type="checkbox" value="book" name="register-hobby">게임</label>
+				</li>
+				<li>
+					<label><input type="checkbox" value="sleep" name="register-hobby">잠자기</label>
+				</li>
+				<li>
+					<label><input type="checkbox" value="computer" name="register-hobby">컴퓨터하기</label>
+				</li>
+				</ul>
+				<!-- value값은 서버에 전송될 때 값을 확실히 하지 않으면 on으로만 뜨기 때문입니다. keyword같은 느낌 -->
+			</div>
+			<input type="submit" value="전송">
+			<button type="reset">초기화</button>
+			<!-- 요즘은 개인정보 입력 칸이 많지 않아서 리셋을 쓰는 경우가 많지 않다 -->
+			<input type="text" placeholder="j35148" maxlength="10">
+			<label for="email">email</label>
+			<input type="email" id="email" placeholder="j35148@email.com">
+			
+			<div>
+				<label for="upload">file</label>
+				<input multiple type="file" name="uploadfile" id="upload" value="업로드">
+				<!-- 멀티플 속성은 파일을 여러개 선택이 가능하게 만듭니다. 파일 업로드를 할떄는 폼 인코딩 타입을 바꿔줘야 겠지 텍스트 파일 같은 거는 상관이없겠지만 그래픽 파일 같은 거는 멀티플폼데이터 타입으로 바꿔줘야 합니다.-->
+			</div>
+			<textarea name="message" id="" cols="30" rows="10">dd</textarea>
+		</fieldset>
+
+		<fieldset>
+			<legend>2번 펌</legend>
+			<div>
+			<h3>your job</h3>
+				<select name="job">
+					<option value="">select</option>
+					<!-- value 값이 없는 이유는 아무것도 선택되지 않음을 의미합니다. -->
+					<option value="student" selected>student</option>
+					<!-- selected의 값은 radio의 checked 값처럼 미리 선택되게 만들어 줍니다. -->
+					<option value="instructor">instructor</option>
+					<option value="doctor">doctor</option>
+					<optgroup label="web">
+						<option value="developer">developer</option>
+						<option value="designer">designer</option>
+						<option value="planner">planner</option>
+						<option value="developer">developer</option>
+					</optgroup>
+					<!-- 옵션 그룹을 묶는다. -->
+				</select>
+				
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
