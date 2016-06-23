@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/*웹 브라우저의 기본 스타일을 덮어쓰기*/
+body{margin:0;}
+
+
+/*문서에서 대상을 선택한다*/
+/*선택자가 필요함*/
+
+article{
+	/*선택된 대상을 스타일링*/
+	/*속성: 값;*/
+
+	border:1px solid red;
+	/* border : 두께 모양 색상 */
+}
+article h2{font-weight:100;}
+article img{margin-top:100px;}
+/*img 요소는 inline-block 요소입니다.*/
+/*inline-block 요소는 margin-top 같은 값이 적용이 됩니다.*/
+article p{line-height:30px;}

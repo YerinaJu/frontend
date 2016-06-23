@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html markup</title>
+	<link rel="css/style.css">
+	<script>
+		// 문서에 number 요소 만들기
+		var my_num_input= document.createElement('input');
+		// 생성요소를 변수 mynuminput에 참조하다.
+			변수 my_num_input에 참조된 문서 객체 input 요소에 속성 Attribute을 성정한다.
+			my_num_input.setAttribute('type','number');
+			// 조건(my_num_input요소의 type 속성 값이 'text'인가)를 확인
+			if(my_num_input.getAttribute('type') === 'text'){
+				// input[type="number"]를 지원하지 않는 브라우저 대응하는 코드
+				console.log('input "number" 유형을 지원합니다.');
+			} else {
+				console.log('input "number" 유형을 지원합니다.');
+			}
+	</script>
+</head>
+<body>
+	<!-- html 4.01 & xhtml 1.0 -->
+	<div id="header"></div>
+	<div id="gnb"></div>
+	<div id="main"></div>
+	<div id="sidebar"></div>
+	<div id="footer"></div>
+
+	<!-- html5 -->
+	<header id="고유이름" class="다른이름1 다른이름2"></header>
+	<!-- 가급적 id보단 class를 사용하는 것이 좋습니다. -->
+	<nav></nav>
+	<main></main>
+	<!-- 문서 내에서 한번만 쓰일수 있어여 -->
+	<section>
+		<article></article>
+	</section>
+	<!-- section과 article은 서로서로 안에 쓰여도 상관 없습니다. section에는 제목이 항상 필요합니다. -->
+	<!-- section은 범용적 / article은 독립적-> 위젯같이 외부로 꺼내도 상관없는 애들 (ex 기사) -->
+	<aside></aside>
+	<footer class="page-footer"></footer>
+</body>
+</html>
