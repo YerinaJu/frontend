@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+/* CSS 주석 */
+
+/* 
+
+css 선택자
+----------------------
+요소 선택자 E
+전체 선택자 *
+자손 선택자 E(P) E(C) 
+그루핑 E,E,E
+
+*/
+
+/* 주석을 남길 때 저작권에 관한 내용은 주석 앞에 !을 남깁니다 */
+/* ! selectors.css c yamoo9.net, 2016 */
+
+
+/* 
+
+요소 + 그루핑 + 아이디디 + 전체 선택자
+CSS 선택자는 여러 유형이 조합되어 사용됩니다 
+
+#아이디 선택자
+0100
+
+.클래스 선택자
+0010
+
+*/
+
+body{
+	margin:0;
+	/*글잘 크기 변경*/
+	font-size: 16px;
+	/*고정 값인 px을 상대 값으로 변경하고자 한다면?*/
+	font-size: 1.25em; 
+}  
+
+/* 전체선택자 `*` */
+body *{
+	/*margin:0;*/
+}
+
+h3{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*그루핑 E,E,E*/
+body, body *{
+	margin:0;
+}
+
+body, #shoppingGrpTab *{
+	margin:0;
+}
+
+/* 
+자식 선택자 E(p) > E(C)
+> Child combinator 
+*/
+
+/*직계 자식을 가리키는 선택자*/
+#shopping1 > h4 {
+	color:#7045cf;
+}
+
+/* 클래스 선택자 E.class-name | .class-name | .class-name1.class-name2 | .class-name1 .class-name2 */
+
+p.notice{}
+/*p 안에 있는 notice만 적용이 됩니다. 제약이 있는 경우 아니면 웬만하면 쓰지 맙시다.*/
+.notice{}
+.error{}
+/*일반적으로 사용되는 방법, 코드 재사용 목적*/
+.class-name1.class-name2{}
+/*멀티클래스*/
+/*ex) 익스플로러 6버전에서는 앞 뒤 순서 바뀌는 게 적용이 되지 않습니다.*/
+.button{
+	border:none;
+	background-color:#000;
+	color:#fff;
+}
+.buy{color:orange;}
+.cancel-buy{color:lime;}
+
+/*인접 형제 선택자 E + E*/
+/*해당 요소의 바로 다음 요소만 선택할 수 있습니다. 이전 요소는 선택이 불가능합니다.*/
+
+#shop1tabIndex ul { 
+	border:1px solid red; 
+}
+#shop1tabIndex h4 + ul {
+	border:1px solid blue;
+}
+
+/* 일반 형제 선택자 E ~ E */
+/*인접형제가 1개인데 반해, 일반 형제는 1개 이상이 될 수 있다.*/
+#shoppingGrpTab > #shopping1 ~ h3 a{display:block;width:100%;color:skyblue;font-weight:lighter;border:1px solid purple;}
+#shoppingGrpTab > #shopping1 + h3 a{display:block;width:100%;color:red;font-weight:bold;border:3px solid blue;}
+
+
+/* 속성 선택자 [id] / [attr="value"] */
+/* ID 선택자 = 속성 선택자로 변경 */
+[id] {border:4px dotted blue;}
+/*모든 id라는 속성을 가진 요소를 찾아서 변경함*/
+[class] {outline:3px solid rgba(255,255,0,0.5);}
+
+특정 ID 선택자를 찾고자 한다면?
+/*#shopping3{}*/
+#shopping3 [class="screen_out"]{
+	border:10px solid orange;
+}
