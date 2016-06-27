@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+
+.reset-list ul,.reset-list ol{
+	list-style-type:none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+/*.demo와 .lecture한테 똑같은 스타일을 주고 싶을 때 효율적으로 다른 모듈을 만들어서 클래스를 추가합니다.*/
+/* 주로 reset class는 부모 요소한테 주고 자식요소들에게 공통으로 적용시키게 합니다. */
+
+/* 
+
+.lecture
+.lecture ul,.demo ul{ 
+	기본적인 리스트 스타일 초기화
+	ul에게 상속 받으니 li에 할 필요가 없습니다
+	정말 자주 사용되는 코드입니다
+	list-style-type:none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+ */
+
+
+/*파일 타입 이미지 제공을 위한 기본 디자인*/
+.lecture-file-list a, .demo a{
+	padding-left:40px;
+	background-position:0 12px;
+	background-repeat:no-repeat;
+	font-size:38px;
+	text-decoration:none;
+	/*text-indent:40px;*/
+}
+
+
+/*파일 포맷에 따라 자동적으로 아이콘을 배경 이미지로 설정하는 스타일*/
+
+a[href$=".aac"]{
+	color:#07ced5;
+	background-image:url(../images/aac.png);
+}
+a[href$=".ai"]{
+	color:#3b2a10;
+	background-image:url(../images/ai.png);
+}
+a[href$=".avi"]{
+	color:#838383;
+	background-image:url(../images/avi.png);
+}
+a[href$=".doc"]{
+	color:#067fcb;
+	background-image:url(../images/doc.png);
+}
+a[href$=".flac"]{
+	color:#7342d8;
+	background-image:url(../images/flac.png);
+}
+a[href$=".gif"]{
+	color:#ebc200;
+	background-image:url(../images/gif.png);
+}
+a[href$=".html"]{
+	color:#bbcacf;
+	background-image:url(../images/html.png);
+}
+a[href$=".jpg"]{
+	color:#e28500;
+	background-image:url(../images/jpg.png);
+}
+a[href$=".js"]{
+	color:#2b2b2b;
+	background-image:url(../images/js.png);
+}
+a[href$=".mov"]{
+	color:#76b8b7;
+	background-image:url(../images/mov.png);
+}
+a[href$=".mp3"]{
+	color:#2d25de;
+	background-image:url(../images/mp3.png);
+}
+a[href$=".mp4"]{
+	color:#435055;
+	background-image:url(../images/mp4.png);
+}
+a[href$=".pdf"]{
+	color:#cb0606;
+	background-image:url(../images/pdf.png);
+}
+a[href$=".png"]{
+	color:#d15ae3;
+	background-image:url(../images/png.png);
+}
+a[href$=".psd"]{
+	color:#192257;
+	background-image:url(../images/psd.png);
+}
+a[href$=".tiff"]{
+	color:#7b0000;
+	background-image:url(../images/tiff.png);
+}
+a[href$=".txt"]{
+	color:#b3b3b3;
+	background-image:url(../images/txt.png);
+}
+a[href$=".xls"]{
+	color:#79ac00;
+	background-image:url(../images/xls.png);
+}
+.demo a[href^="http://"]{
+	background-image:url(../images/external.png);
+	color:#000;
+}
