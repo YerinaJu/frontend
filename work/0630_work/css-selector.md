@@ -49,7 +49,7 @@
 	 | E::first-line | E 요소의 가장 첫번째 줄의 경우.
 	 | E::first-letter | E 요소의 가장 첫번째 글자의 경우.
 	 | E:lang(language) | 요소의 lang 속성을 찾을 경우.
-	 | E::target | url에 #id 값이 
+	 | E::target | url에 #id 값이 입력됐을 경우.
 	 | E::enabled |
 	 | E::disabled |
 	 | E::checked |
