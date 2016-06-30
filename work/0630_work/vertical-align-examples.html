@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<title>css를 이용한 수직 가운데 정렬하는 법</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<style>
+
+	/* ### 수직 정렬을 하는 3가지 방법 */
+	/* text,image,block의 기본 스타일 지정 */
+	 .text, .image, .block {
+		margin:10px;
+		width:500px;
+		height:200px;
+		border:3px solid;
+		background:#fff;
+	}
+	.text{
+		border-color:#99f;
+	}
+	.image{
+		border-color:#f99;
+	}
+	.image img{
+		width:50px;
+		height:50px;
+	}
+	.block{
+		color:#ff4;
+	}
+	.block div{
+		border:dashed;
+		width:200px;
+	}
+
+
+
+	/*
+	1번. line-height와 vertical-align을 이용한 수직 정렬
+	(오직 inline 요소에만 적용이 가능합니다.)
+	 */
+	/* div {line-height:200px;}
+	img {vertical-align:middle;} */
+
+
+	/* 
+	2번. div 요소를 display:table-cell로 적용 시킨 뒤, vertical-align을 이용해 수직 정렬
+	table-cell은 inline-block같은 속성을 가집니다. 
+	*/
+	/* .text, .image, .block{display:table-cell;} 
+	div, img { vertical-align:middle;}
+	 */
+
+
+	/* 
+	3번. display:inline-block 후 vertical-align을 이용해 수직 정렬 
+	*/
+	.block{
+		line-height:200px;
+	}
+	.block div{
+		line-height:normal;
+		display:inline;
+		display:inline-block;
+		display:inline-table;
+		vertical-align:middle;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="text">
+		<span>Some Text</span>
+	</div>
+	<div class="image"><img src="http://placehold.it/50x50/000/fff/?text=AAA" alt="AAA"></div>
+	<div class="block">
+		<div>Block element, with long enough content to wrap.</div>
+	</div>
+</body>
+</html>

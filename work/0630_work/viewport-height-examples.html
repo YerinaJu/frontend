@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>vh를 이용하지 않고 세로 폭을 브라우저 100%로 만들기</title>
+	<style>
+		html,body{
+			height:100%;
+			margin:0;
+			padding:0;
+		}
+		body{
+			text-align:center;
+		}
+		header, footer{
+			height:100px;
+			background: #f00;
+		}
+		header{
+			position:absolute;
+			top:0;
+			right:0;
+			width:100%;
+		}
+		.inner{
+			padding-top:100px;
+			margin-top:-100px;
+			margin-bottom:-100px;
+			min-height:100%;
+			background-color:green;
+		}
+		/*inner의 컨텐츠가 header 밑에 들어가서 먹는 이슈가 생깁니다!!!*/
+	</style>
+</head>
+
+<body>
+	<header>header</header>
+	<div class="inner">inner</div>
+	<footer>footer</footer>
+</body>
+</html>
