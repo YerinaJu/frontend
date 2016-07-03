@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+body{
+	background:url(../images/background.png) no-repeat;
+	background-size:100% 180%;
+	padding-top:10%;
+	padding-left:10%;
+}
+.photo-frame{
+	float:left;
+	margin-right:80px;
+	margin-bottom:30px;
+	width:200px;
+	height:100%;
+	border:5px solid #3e1e0c;
+	box-shadow:1px 5px 10px #555;
+}
+.photo-frame img{
+	vertical-align:middle;
+}
