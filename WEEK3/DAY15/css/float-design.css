@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/* float demo; */
+
+body{
+	margin:2rem 20%;
+	line-height:1.45;
+}
+
+.image-container{
+	padding:1rem;
+	width:550px;
+	border:4px solid #34c0ff;
+}
+.image-container img{
+	float:left;
+	margin-right:10px;
+}
+
+/*이미지의 부모요소에 class를 삽입하거나 img에 직접 멀티클래스를 삽입하거나 해서 overflow:hidden을 먹인다!*/
+.image-container.blank-bottom-img img + *,
+img.blank-bottom + * {
+  overflow: hidden;
+}
+
+.image-container p{
+	/*padding-left:310px;*/
+	/* img 주위를 text가 감싸는 요소를 해결하는 방법, 그러나 유지보수 측면에서 좋지 않습니다.*/
+	/*overflow:hidden;*/
+	/* img 다음 단락에 overflow:hidden을 줄 경우에 해결이 가능합니다. 그러나 단락이 하나일 때만 가능합니다. 이건 float를 해제시키는 것이 아닌, 임시적인 해결방법입니다. */
+	margin-bottom: 1.5em;
+	color:#1341b5;
+	font-size:0.875rem;
+}

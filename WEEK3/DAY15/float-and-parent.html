@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/float-and-parent.css">
+</head>
+<body>
+	<div class="parent float-container">
+		<div class="child">child element 1</div>
+		<div class="child">child element 2</div>
+		<div class="child">child element 3</div>
+		<!-- 방법 2. 의미는 없되, 표현을 위한 목적으로 <div>요소를 생성하여 class="clear"를 설정합니다. -->
+		<!-- <div class="clear"></div> -->
+	</div>
+	<div class="parent">
+		<div class="child">child element 1</div>
+		<div class="child">child element 2</div>
+		<div class="child">child element 3</div>
+	</div>
+	<div class="parent clearfix">
+		<div class="child">child element 1</div>
+		<div class="child">child element 2</div>
+		<div class="child">child element 3</div>
+	</div>
+</body>
+</html>
