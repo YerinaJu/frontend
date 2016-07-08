@@ -5,6 +5,12 @@
 	clear:both;
 	content:'';
 }
+.blind{
+	position:absolute;
+	top:99999999em;
+	left:9999999em;
+	line-height:0;
+}
 body,div,header,footer,main,article,nav{
 	margin:0;
 	padding:0;
