@@ -8,10 +8,8 @@
 .blind{
 	overflow:hidden;
 	position:absolute;
-	top:99999999em;
-	left:9999999em;
-	width:1px;
-	height:1px;
+	top:-9999em;
+	left:-9999em;
 	line-height:0;
 }
 body,div,header,footer,main,article,nav{
