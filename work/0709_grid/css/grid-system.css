@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+body{
+	background: linear-gradient(135deg, transparent 50%, #000 51%, transparent 52%)
+	background-size: 30px 30px,
+	line-height: 1.5;
+	text-align: center;
+}
+body.overlay-grid::after {
+  content: '';
+  position:absolute;
+  top: 0;
+  left: 50%;
+  width: 1280px;
+  height: 250vh;
+  z-index: 10000;
+  transform: translateX(-50%);
+  background: url("../images/grid-1280.png") repeat;
+}
+body.overlay-grid:hover::after{
+	display:none;
+}
+.clearfix::after{
+	display: block;
+	clear: both;
+	content: '';
+}
+.blind{
+	overflow: hidden;
+	position: absolute;
+	left: -9999em;
+	top: -9999em;
+	line-height: 0;
+}
+
+.container{
+	width: 1280px;
+	margin: 0 auto;
+}
+header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100px;
+	background-color:#96d6ea;
+}
+.inner-wrapper{
+	width:1280px;
+	margin:0 auto;
+	padding:24px 16px 0;
+}
+.inner-wrapper .header-menu{
+	float:left;
+	width:60px;
+	height:45px;
+	background-color:#fff;
+	margin-right:20px;
+}
+.inner-wrapper .logo{
+	float:left;
+	width:80px;
+	height:45px;
+	background-color:#fff;
+}
+.inner-wrapper .logo:hover,.inner-wrapper .header-menu:hover, .inner-wrapper .menu-right a:hover{
+	background-color:#ececec;
+	color:#000;
+}
+.inner-wrapper .menu-right{
+	float:right;
+}
+.inner-wrapper .menu-right a{
+	display:inline-block;
+	margin-top:24px;
+	margin-left:15px;
+	width:80px;
+	height:24px;
+	background-color:#fff;
+}
+main{
+	width:927px;
+	margin:144px auto 0;
+}
+.main-content .main-carousel{
+	height:400px;
+	background-color:#f09f0f;	
+}
+.main-content .content-left{
+	float:left;
+	margin-top:32px;
+	width:448px;
+	height:370px;
+	background-color:#f09f0f;
+}
+.main-content .content-right{
+	float:right;
+	margin-top:32px;
+}
+.main-content .content-right li{
+	margin-bottom:20px;
+	width:457px;
+	height:110px;
+	background-color:#f09f0f;
+}
+.main-content .content-right li:last-child{
+	margin:0;
+}
+
+section.item-list{
+	margin-top:38px;
+}
+.item-list .item-wrapper a{
+	float:left;
+	width:221px;
+	height:200px;
+	background-color:#f09f0f;
+	margin-bottom:16px;
+	margin-right:14px;
+}
+.item-list .item-wrapper a:nth-child(4n+0){
+	margin-right:0;
+}
+.item-list .item-wrapper a:hover{
+	background-color:#ececec;
+}
+footer{
+	margin:24px auto 0;
+	width:1247px;
+	height:150px;
+	background-color:#f09f0f;
+}
