@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
 body{
-	background: linear-gradient(135deg, transparent 50%, #000 51%, transparent 52%)
-	background-size: 30px 30px,
 	line-height: 1.5;
 	text-align: center;
 }
@@ -12,7 +10,7 @@ body.overlay-grid::after {
   top: 0;
   left: 50%;
   width: 1280px;
-  height: 250vh;
+  min-height: 235vh;
   z-index: 10000;
   transform: translateX(-50%);
   background: url("../images/grid-1280.png") repeat;
