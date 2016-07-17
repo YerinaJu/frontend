@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+*{color:#1e1e20;}
+a{text-decoration: none;}
+/* 기본 */
+.clearfix::after{
+	display:block;
+	clear:both;
+	content:'';
+}
+
+/* 문단 */
+h1,h2,h3,h4,h5,h6{
+	float:left;
+	overflow:hidden;
+	letter-spacing: -0.025em;
+	font-weight:bold;
+	color:#1e1e20;
+}
+h6{
+	font-size:1em;
+	margin-bottom:1.5em;
+}
+h5{
+	font-size:1.313em;
+	line-height: 2.29;
+	margin-bottom:1.1424em;
+}
+h4{
+	font-size:1.723969em;
+	line-height: 1.75;
+	margin-bottom:0.87em;
+}
+h3{
+	font-size:2.263571297em;
+	line-height: 1.33;
+	margin-bottom:0.6626em;
+}
+h2{
+	font-size:2.972069112961em;
+	line-height: 1.01;
+	margin-bottom:0.5046em;
+}
+h1{
+	font-size:3.902326745317793em;
+	line-height: 1.16;
+	margin-bottom:0.3843em;
+}
+p {
+	float:left;
+	display:inline-block;
+	letter-spacing: -0.025em;
+	margin-bottom: 1.5em;
+	color:#1e1e20;
+}
+
+/* 버튼 */
+.button{
+	padding:14px 1.8rem 16px;
+	border:none;
+	cursor:pointer;
+	margin-right:20px;
+	height:42px;
+	background-color:#046380;
+	color:#fff;
+	box-sizing: border-box;
+}
+.button:hover,.button:focus{
+	box-shadow: 
+}
+.button.round{
+	border-radius:3px;
+}
+.button.rounder{
+	border-radius: 12px;
+}
+.button.no-color{
+	background-color:#fff;
+	color:#046380;
+}
+
+/* 색 */
+.default{
+	color:#1e1e20;
+}
+.primary{
+	color:#046380;
+}
+.danger{
+	color:#dc3522;
+}
+.info{
+	color:#1695a3;
+}
+.warning{
+	color:#ff9800;
+}
+.success{
+	color:#85db18;
+}
+
+
+body{
+	padding:63px 5%;
+	margin:0 auto;
+	font-size:14px;
+	line-height:1.5;
+	font-family: 'Noto Sans KR', sans-serif;
+	background-size:1px 21px;
+	background-image: linear-gradient(180deg, transparent 95%, #f00);
+}
+body:hover{
+	background:none;
+}
+.wrapper [class*="article"]{
+	margin-bottom:42px;
+}
+h3[class*="heading-"]{
+	border-bottom:2px solid currentColor;
+}
+
+section[class*="inner-wrapper-"]{
+	float:right;
+	width:900px;
+	margin-top:42px;
+}
+section[class*="inner-wrapper-"] .p-box{
+	position:relative;
+	padding-left:80px;
+	margin-bottom:21px;
+}
+
+span[class*="info-"]{
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	width:80px;
+	font-weight:500;
+}
+
+/* 링크 */
+.link{	
+	overflow:hidden;
+	display:inline-block;
+	position:relative;
+	padding:13px 1.8rem;
+	margin-right:20px;
+	height:42px;
+	box-sizing: border-box;
+	font-weight:600;
+}
+.link::after{
+	display:block;
+	content:'';
+	position:absolute;
+	left:50%;
+	right:50%;
+	bottom:0;
+	border-bottom:2px solid currentColor;
+	transition: all 0.3s;
+}
+.link:hover::after,.link:focus::after{
+	left:5px;
+	right:5px;
+}
+a[class*="slide-"]{
+	position:relative;
+	overflow:hidden;
+	display:inline-block;
+	vertical-align: bottom;
+	padding-bottom:0.06em 0.12em;
+	border-bottom:none;
+}
+a[class*="slide-"]::after{
+	position:absolute;
+	width:100%;
+	content:attr(data-linktext);
+	background:red;
+	color:#fff;
+	transition: all 0.4s;
+	text-align:center;
+}
+
+a.slide-from-left::after{
+	left:-100%;
+}
+a.slide-from-left:hover::after,
+a.slide-from-left:focus::after{
+	left:0;
+}
+a.slide-from-right::after{
+	right:-110%;
+}
+a.slide-from-right:hover::after,
+a.slide-from-right:focus::after{
+	right:0;
+}
+a.slide-from-top::after{
+	top:-100%;
+}
