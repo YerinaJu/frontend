@@ -16,14 +16,10 @@
 	float:left;
 	width:100%;
 }
+
 .unit-s-1-2{width:50%;}
 .unit-s-1-3{width:33.3333333333333%;}
 
-
-.container{
-		margin-left:auto;
-		margin-right:auto;
-}
 a{
 	color:#fff;
 	text-decoration: none;
@@ -50,26 +46,29 @@ body{
 	border-top:1px solid rgba(255,255,255,0.3);
 }
 .header-inner [class*="header-"]{
-	display:inline-block;
-}
-.header-menu .header-menu-btn{
 	display:block;
+	 margin-left:auto; 
+	 margin-right:auto; 
+	text-indent:-999em;
+}
+.menu-list-item .header-menu{
 	width:33px;
 	height:25px;
 	background:url("../image/icon-menu.png");
 }
-.header-menu .menu-list{
+.menu-list-item .depth-list{
 	 display:none; 
 }
-.header-inner .header-search{
-	height:35px;
+.menu-list-item .header-search{
+	 width:33px; 
+	 height:35px; 
 	background:url("../image/icon-search.png") no-repeat;
 }
-.header-inner .search-box{
+.menu-list-item .search-box{
 	display:none;
 }
 .header-checkout{
-	margin-left: -3%;
+	width:42px;
 	height:32px;
 	background:url("../image/icon-card.png") no-repeat;
 }
@@ -195,12 +194,18 @@ footer{
 footer .footer-sns{
 	margin:45px auto 0;
 }
+.footer-sns a i{
+	margin-left: 50%;
+	transform: translateX(-50%);
+	font-size:40px;
+}
 footer .footer-nav{
 	margin-top:53px;
 }
 .footer-nav li{
 	margin-bottom:31px;
 }
+
 @media (min-width:768px) and (max-width:1400px){
 	/*grid*/
 	.unit-l-1-2,.unit-l-2-4{width:50%;}
@@ -215,37 +220,50 @@ footer .footer-nav{
 	.unit-l-8-10{width:80%;}
 	.unit-l-9-10{width:90%;}
 
+
 	.container{
-		width:1180px;
+		max-width:1180px;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	.header{
 		padding-top:100px;
 	}
 	.header .header-inner{
 		border:none;
+		width:100%;
 	}
-	.header .header-menu-btn{
+	.menu-list-item .header-menu{
 		display:none;
 	}
-	.header-menu .menu-list{
+	.menu-list-item .depth-list{
 		display:block;
+		text-indent:0;
 	}
-	.menu-list [class*="depth-menu-"]{
+	.depth-list [class*="depth-menu-"]{
 		float:left;
 		margin-right:23px;
 	}
-	.header .header-search{
-		float:left;
-		margin-left: 330px;
+	.menu-list-item .header-search,.menu-list-item .header-checkout{
+		width:100%;
+		margin:0;
 		background-size:20px 19px;
-		background-position:0 3px;
-		text-indent:25px;
+		background-position:50px 3px;
+		text-indent: 0;
 	}
-	.header .header-checkout{
+	.menu-list-item .header-search{
+		background-position:50px 3px;
+	}
+	.menu-list-item .header-checkout{
+		background-position:30px 3px;
+	}
+	.header-inner .menu-list-item:nth-child(2){
 		float:right;
-		background-size:20px 19px;
-		background-position:0 3px;
-		text-indent:25px;
+		text-align:right;
+	}
+	.header-inner .menu-list-item:last-child{
+		float:right;
+		text-align:right;
 	}
 	main{
 		padding-bottom:84px;
@@ -272,11 +290,13 @@ footer .footer-nav{
 		margin:0;
 		float:right;
 	}
-	.footer-sns li{
-		margin-right:;
-	}
+	.footer-sns a i{
+	font-size:16px;
+	margin-left:10px;
+}
 	footer .footer-nav{
 		margin:0;
+		margin-left:0;
 		float:left;
 	}
 	.footer-nav li{
