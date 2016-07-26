@@ -40,15 +40,21 @@ body{
 	margin:0 auto;
 }
 .header .header-inner{
-	margin:57px auto 0;
-	padding-top:35px;
+	margin-top:57px;
+}
+.header .header-inner::before{
+	display:block;
+	content:'';
+	margin-left:auto; 
+	margin-right:auto; 
+	margin-bottom:35px;
 	width:89%;
+	height:1px;
 	border-top:1px solid rgba(255,255,255,0.3);
 }
 .header-inner [class*="header-"]{
 	display:block;
-	 margin-left:auto; 
-	 margin-right:auto; 
+	margin:0 auto;
 	text-indent:-999em;
 }
 .menu-list-item .header-menu{
@@ -60,9 +66,9 @@ body{
 	 display:none; 
 }
 .menu-list-item .header-search{
-	 width:33px; 
-	 height:35px; 
-	background:url("../image/icon-search.png") no-repeat;
+	 width:33px;
+	 height:35px;
+	 background:url("../image/icon-search.png") no-repeat;
 }
 .menu-list-item .search-box{
 	display:none;
@@ -80,7 +86,7 @@ main .main-text{
 }
 .main-text .focus-on{
 	margin:0;
-	font-size:27px;
+	font-size:1.6875em;
 	font-weight:bold;
 }
 .main-text strong{
@@ -119,12 +125,11 @@ main .main-content{
 	box-sizing:border-box;
 }
 .cta-box .content-btn{
-	display:block;
+	display:inline-block;
 	margin:21px auto 0;
-	width:92px;
-	height:17px;
+	padding:0.25em 1em;
 	border:1px solid #fff;
-	font-size:12px;
+	font-size:0.75em;
 }
 .inner-content .cta-box{
 	background-color:#7f6162;
@@ -228,13 +233,21 @@ footer .footer-nav{
 	}
 	.header{
 		padding-top:100px;
+		position:relative;
 	}
 	.header .header-inner{
-		border:none;
-		width:100%;
+		/* width: 100%; */
+		float:right;
+	}
+	.header .header-inner::before{
+		display:none;
 	}
 	.menu-list-item .header-menu{
 		display:none;
+	}
+	.menu-list-item:first-child{
+		position:absolute;
+		left:0;
 	}
 	.menu-list-item .depth-list{
 		display:block;
@@ -248,22 +261,19 @@ footer .footer-nav{
 		width:100%;
 		margin:0;
 		background-size:20px 19px;
-		background-position:50px 3px;
+		/* background-position:50px 3px; */
 		text-indent: 0;
 	}
-	.menu-list-item .header-search{
-		background-position:50px 3px;
-	}
-	.menu-list-item .header-checkout{
-		background-position:30px 3px;
+	.menu-list-item .header-search,.menu-list-item .header-checkout{
+		text-indent:25px;
+		background-position:0 5px;
 	}
 	.header-inner .menu-list-item:nth-child(2){
-		float:right;
-		text-align:right;
+		width:inherit;
+		margin-right:20px;
 	}
 	.header-inner .menu-list-item:last-child{
-		float:right;
-		text-align:right;
+		width:inherit;
 	}
 	main{
 		padding-bottom:84px;
@@ -296,7 +306,7 @@ footer .footer-nav{
 }
 	footer .footer-nav{
 		margin:0;
-		margin-left:0;
+		margin-left:10%;
 		float:left;
 	}
 	.footer-nav li{
