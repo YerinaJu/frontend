@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form name="primary-form" action="#" method="get">
+		<p>
+			<label for="c_id">ID</label>
+			<input type="text" name="c_id" id="c_id" placeholder="terina">
+		</p>
+	</form>
+	<form name="secondary_form" action="#" method="get">
+		<p>
+			<label for="c_mail">mail</label>
+			<input type="text" name="c_mail" mail="c_mail" placeholder="terina">
+		</p>
+	</form>
+	<script>
+		var form = document.forms;
+		console.log(form);
+
+		var root_element;
+		root_element = document.documentElement;//html 문서
+		root_element = document.getElementsByTagName('html')[0];//xml,html문서에서만 사용 가능
+		console.log(root_element); //<html> - 비표준 ie에서는 body를 가리키게 된다.
+
+		var inputs = document.getElementsByTagName('input');
+		var buttons = document.getElementsByTagName('button');
+		console.log('inputs:', inputs);
+		console.log('buttons:', buttons);
+	</script>
+</body>
+</html>

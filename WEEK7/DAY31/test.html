@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>버튼을 이용해서 색을 바꿔보자</title>
+	<style>
+		.btn-group{
+			display: flex;
+			justify-content: center;
+			align-content:center;
+		}
+		.btn-group button{
+			flex-basis: 80px;
+			border-radius: 3em;
+			border: none;
+			padding: 1em;
+			color: #fff;
+			margin:0 20px;
+		}
+		/*.btn-group button:nth-child(1){
+			background-color: red;
+		}*/
+		.btn-group button:nth-child(2){
+			background-color: orange;
+		}
+		.btn-group button:nth-child(3){
+			background-color: yellow;
+		}
+		.btn-group button:nth-child(4){
+			background-color: green;
+		}
+		.btn-group button:nth-child(5){
+			background-color: blue;
+		}
+		.btn-group button:nth-child(6){
+			background-color: navy;
+		}
+		.btn-group button:nth-child(7){
+			background-color: purple;
+		}
+	</style>
+</head>
+<body>
+	<div class="btn-group">
+		<button type="button">red</button>
+		<button type="button">orange</button>
+		<button type="button">yellow</button>
+		<button type="button">green</button>
+		<button type="button">blue</button>
+		<button type="button">navy</button>
+		<button type="button">purple</button>
+	</div>
+	<script>
+		var body = document.getElementsByTagName('body');
+		var button = document.getElementsByTagName('button');
+
+		var button1 = button[0];
+
+		console.log(button1);
+
+		function changeColor(){
+			this.style.backgroundColor = this.firstChild.nodeValue;
+		}
+
+		button1 = 
+
+		// button1.onclick = function (){
+		// 	console.log('dkkdksdlkjslkfjsflksjdljfk');
+		// 	var changeColor = this.firstChild.nodeValue;
+		// 	body.style.backgroundColor = changeColor;
+		// }
+	</script>
+</body>
+</html>

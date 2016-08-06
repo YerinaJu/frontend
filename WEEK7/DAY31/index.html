@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#button-group{
+			display: flex;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		#button-group button{
+			flex: 1; 
+			border: none;
+			padding: 1em;
+			background: #000;
+			color: #fff;
+		}
+		#button-group button:nth-child(1){background-color:#f50054;}
+
+		#button-group button:nth-child(2){background-color:#8800f3;}
+
+		#button-group button:nth-child(3){background-color:#139df3;}
+
+		#button-group button:nth-child(4){background-color:#20f97d;}
+
+		#button-group button:nth-child(5){background-color:#f2ce09;}
+	</style>
+</head>
+<body>
+	<p title="time is gold">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum maiores, vitae, doloremque repellendus numquam aliquam.
+	</p>
+	<p id="comment">보충은 다음 주부터 시작하ㅏㄴ다.</p>
+
+	<div>
+		<h2 id="heading-01">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-02">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-03">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2 id="heading-04">headline</h2>
+		<ul>
+			<li><a href="">item-01</a></li>
+			<li><a href="">item-02</a></li>
+			<li><a href="">item-03</a></li>
+		</ul>
+	</div>
+
+	<button class="btn-red">#ff0000</button>
+	<button class="btn-blue">#000</button>
+	<div id="button-group" role="group">
+		<button type="button">#f50054</button>
+		<button type="button">#8800f3</button>
+		<button type="button">#139df3</button>
+		<button type="button">#20f97d</button>
+		<button type="button">#f2ce09</button>
+	</div>
+<script>
+	var btnGroup = document.getElementById('button-group');
+	console.log(btnGroup);
+
+	// 문서에서 단락 요소에 접근(선택)한다.
+	// 유사 배열(Like Array): 노드리스트 or HTMLCollection = 배열과 비슷하지만 실제 배열은 아니다.
+	console.log('문서에서 단락 요소의 개수:', document.getElementsByTagName('p').length); //= 2 
+	console.log('수집된 문서의 단락 요소 중 첫번째 요소:', document.getElementsByTagName('p').item(0)); //유사배열 안에 있는 요소 중 0번쨰 값을 가져온다.
+	console.log('단락 요소의 노드 유형:', document.getElementsByTagName('p')[0].nodeType);
+	// 접근한 단락 요소의 노트 유형을 콘솔 패널에 기록한다
+
+
+function tag(name){
+	return document.getElementsByTagName(name);
+}
+
+function id(name){
+	return document.getElementById(name);
+}
+
+function print(msg){
+	console.log(msg);	
+}
+	var paras = tag('p');
+	var divs = tag('div');
+	var uls = tag('ul');
+	var lis = tag('li');
+	var headings = tag('h2');
+	var links = tag('a');
+
+	var h2_1 = id('heading-01');
+	var h2_2 = id('heading-02');
+	var h2_3 = id('heading-03');
+	var h2_4 = id('heading-04');
+
+	var paras, divs, lis, uls, headings, links;
+
+	paras = document.getElementsByTagName('p');
+	divs = document.getElementsByTagName('div');
+	uls = document.getElementsByTagName('ul');
+	lis = document.getElementsByTagName('li');
+	headings = document.getElementsByTagName('h2');
+	links = document.getElementsByTagName('a');
+
+	print(paras);
+	print(divs);
+	print(uls);
+	print(lis);
+	print(headings);
+	print(links);
+
+	print(h2_1);
+	print(h2_2);
+	print(h2_3);
+	print(h2_4);
+
+
+	// body 요소에 마우스를 올리면 배경 색이 붉은 색으로 변경된다.
+	// body 요소에 마우스를 내리면 배경 색이 하얀 색으로 변경된다.
+	// => <body>요소를 메모리를 한다.(변수 사용)
+	// var body = document.getElementsByTagName('body').item(0);
+	var body = document.body; //DOM Legacy (LV 0), HTML DOM
+	// console.log(body.onmouse) = null -> 이벤트 속성의 초기 상태는 비어 있으므로 값이 null로 나온다
+/*	body.onmouseover = function() {
+		// 어떤 일을 수행하게 안내함
+		// console.log('onmouseover on body'); //온마우스오버는 바보처럼 움직인다. 쓰지마세요...
+		// console.log('mouse enter on body');
+		body.style.backgroundColor = 'red';
+	}
+	body.onmouseleave = function(){
+		body.style.backgroundColor = 'white';
+	}
+*/
+	var btnRed = document.getElementsByClassName('btn-red')[0];
+	var btnBlue = document.getElementsByClassName('btn-blue')[0];
+	//클래스 네임의 경우, 클래스는 아이디와 다르게 배열의 값으로 가져오기 때문에 배열의 몇번째 요소를 가져올 것인지 확실히 명시해주어야한다. 없으면 오류가 난다!
+
+	var button = document.getElementsByTagName('button');
+
+	for(var i=0;i<button.length;i++){
+		button[i].onmouseover = function(){
+			body.style.backgroundColor = this.firstChild.textContent;
+			// innerHTML 은 대상에 들어있는 HTML요소를 가져온다. 비표준 방식
+			// firstChild.nodeValue 안에 들어있는 첫번째 자식의 node의 값을 가져온다
+			// textContent 텍스트 콘텐츠를 가져온다. 크로스브라우징이 안된다.
+		}
+	}
+	//for문을 사용해서 버튼의 갯수를 파악한 후, 
+
+	console.log(button);
+
+	btnRed.onclick = function(){
+		console.log(body);
+		console.log(btnRed.innerHTML);
+		body.style.backgroundColor = btnRed.innerHTML;
+
+	}
+	btnBlue.onclick = function(){
+		body.style.backgroundColor = 'blue';
+	}
+
+	button.onclick = function(){
+		console.log('dkfjslkdjfslkdjflksdjfkl');
+	}
+
+
+
+
+
+</script>
+</body>
+</html>

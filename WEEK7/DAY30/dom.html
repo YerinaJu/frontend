@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트를 사용한 문서 동적 제어</title>
+	<script>
+		// 웹 표준 호환 모드라면 스탠다드_모드에 트루 값이 참조된다.
+		var standerd_mode = document.compatMode == 'CSS1Compat'
+		// 문서에서 루트 요소인 html 요소를 찾아서 변수 html 에 참조한다.
+		var html = document.documentElement; 
+		// 웹 표준 호환 모드라면 첫번째 코드 블럭문이 실행함.
+		if ( standard_mode ) {
+			// 변수 html 에 참조된 문서 객체 html 요소에 class 속성 값을 'standard'로 설정한다.
+		    html.setAttribute('class', 'standard');
+		    document.write('<link rel="stylesheet href="css/style.css">');
+		} 
+			// 웹 표준 호환 모드가 아니라면 두번째 코드 블럭문이 실핸한다.
+		else {
+			// 변수 html에 참조된 문서 객체 html에 요소에 class 속성 값을 'no-standard'로 설정한다.
+		    html.setArrtibute('class', 'no-standard');
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
