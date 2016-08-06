@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+.wrapper{
+	background:url("https://static1.squarespace.com/static/ta/5134cbefe4b0c6fb04df8065/8639/assets/pages/tour/overview/hero-desktop.jpg?a") no-repeat;
+	background-size:cover;
+	padding:40px 5%;
+	height:100vh;
+}
+
+.blind{
+	line-height:0;
+}
+.clearfix::after{
+	display:block;
+	clear:both;
+	content:'';
+}
+
+header h1{float:left;}
+header svg{ width:200px; height:50px; }
+header .nav, header .nav li{
+	float:left;
+}
+header .nav li{
+	margin:0 2em;
+}
+.nav [class*="menu-"]{
+	overflow:hidden;
+	position:relative;
+	height:30px;
+	display:block;
+	color:#fff;
+	letter-spacing: 2px;
+	text-decoration: none;
+	font-variant: small-caps;
+}
+.nav [class*="menu-"]::before{
+	display:block;
+	position:absolute;
+	left:-100%;
+	right:100%;
+	bottom:4px;
+	content:'';
+	border-bottom:1px solid #fff;
+	transition: all 0.5s;
+}
+.nav [class*="menu-"]:hover::before,
+.nav [class*="menu-"]:focus::before{
+	left:0;
+	right:0;
+}
+.menu-domains{
+}
+header .button-login{
+	cursor:pointer;
+	float:right;
+	padding:10px 40px;
+	margin-top:-5px;
+	border:1px solid #fff;
+	color:#fff;
+	transition:all 0.5s;
+	font-variant: small-caps;
+}
+header .button-login:hover{
+	background-color:rgba(255,255,255,0.8);
+	color:#000;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

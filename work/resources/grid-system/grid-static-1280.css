@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+/* 
+사이즈 1280px 
+grid system (160 [unit(130) + gutter(15)],8 column)
+기본 글자 크기 15px;
+타입 배율 1.5; -> 15*1.5 =22.5px
+gutter 방향 after -> margin-right;
+
+*/
+
+
+.grid-container{
+	position:relative;
+	width:1250px;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+/*overlay grid guideline module */
+.grid-container.show-grid-after::before{
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:200vh;
+	z-index:10000;
+	background-color:hsla(60, 50%, 50%, 0.3);
+	background:
+	linear-gradient(transparent 26px, #26923f 26px),
+	linear-gradient(90deg, rgba(191, 64, 64, 0.3) 130px, rgba(0, 0, 0, 0) 130px);
+	background-size:
+	1px 1.6875rem, 
+	160px 1px;
+}
+.grid-container.show-grid-before::before{
+	content:'';
+	position:absolute;
+	top:0;
+	left:-30px;
+	width:1280px;
+	height:100vh;
+	z-index:10000;
+	background-color:hsla(60, 50%, 50%, 0.3);
+	background:
+	linear-gradient(transparent 26px, #26923f 26px),
+	linear-gradient(90deg, transparent 19%, rgba(191, 64, 64, 0.3) 19%);
+	background-size:
+	1px 1.6875rem, 
+	160px 1px;
+}
+.grid-container.show-grid-split::before{
+	content:'';
+	position:absolute;
+	top:0;
+	left:-15px;
+	width:1280px;
+	height:100vh;
+	z-index:10000;
+	background-color:hsla(60, 50%, 50%, 0.3);
+	background:
+	linear-gradient(transparent 26px, #26923f 26px),
+	linear-gradient(90deg, transparent 15px, rgba(191, 64, 64, 0.3) 15px, rgba(191, 64, 64, 0.3) 145px, transparent 145px);
+	background-size:
+	1px 1.6875rem, 
+	160px 1px;
+}
+.grid::after{
+	content:'';
+	display:block;
+	clear:both;
+}
+[class*="unit-"]{
+	float:left;
+	margin-right:30px;
+	background-color:red;
+}
+.grid .last, .omega{
+	margin-right:0;
+}
+/* last-child로 선택하는 거 말고도, .last나 .omega(외국에서 많이 쓰는 클래스명)라는 클래스명을 지정해서 넣을 수도 있습니다. */
+
+.unit-1{ width:130px; } 
+.unit-2{ width:290px; }
+.unit-3{ width:450px; }
+.unit-4{ width:610px; }
+.unit-5{ width:770px; }
+.unit-6{ width:930px; }
+.unit-7{ width:1090px; }
+.unit-8{ width:1250px; }
+
+
+/*push, pull module*/
+
+.grid [class*="push-"]{position:relative;}
+.grid [class*="pull-"]{position:relative;}
+.grid .push-1{left:160px;}
+.grid .push-2{left:320px;}
+.grid .push-3{left:480px;}
+.grid .push-4{left:640px;}
+.grid .push-5{left:800px;}
+.grid .push-6{left:960px;}
+.grid .push-7{left:1120px;}
+.grid .push-8{left:1280px;}
+
+.grid .pull-1{right:160px;}
+.grid .pull-2{right:320px;}
+.grid .pull-3{right:480px;}
+.grid .pull-4{right:640px;}
+.grid .pull-5{right:800px;}
+.grid .pull-6{right:960px;}
+.grid .pull-7{right:1120px;}
+.grid .pull-8{right:1280px;}
+
+
+/*prefix, suffix module*/
+.grid .prefix-1{margin-left:160px;}
+.grid .prefix-2{margin-left:160px;}
+.grid .prefix-3{margin-left:160px;}
+.grid .prefix-4{margin-left:160px;}
+.grid .prefix-5{margin-left:160px;}
+.grid .prefix-6{margin-left:160px;}
+.grid .prefix-7{margin-left:160px;}
+.grid .prefix-8{margin-left:160px;}
+
+.grid.suffix-1{margin-right:160px;}
+.grid.suffix-2{margin-right:160px;}
+.grid.suffix-3{margin-right:160px;}
+.grid.suffix-4{margin-right:160px;}
+.grid.suffix-5{margin-right:160px;}
+.grid.suffix-6{margin-right:160px;}
+.grid.suffix-7{margin-right:160px;}
+.grid.suffix-8{margin-right:160px;}
+
+.grid.suffix-1{
+
+}

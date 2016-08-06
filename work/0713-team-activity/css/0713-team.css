@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+
+
+
+body{
+	font-family:'BM HANNA','배달의민족 한나', sans-serif;
+	font-size:10em;
+	background: #8677e8;
+}
+
+.canvas{
+	overflow:hidden;
+	position:relative;
+	padding: 70px 60px 0;
+	margin-left:auto;
+	/* margin-bottom: 0; */
+	margin-right:auto;
+	width:650px;
+	text-align: justify;
+	text-align-last:center; 
+	/*가로폭을 고정 시킨 뒤, 텍스트의 부모에게 justify을 사용해 양끝 정렬을 하였다!*/
+	background:linear-gradient(180deg, #fff 55%, #eee 100%);
+	box-shadow: -30px -5px 30px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+	transform:scale(0.8);
+}
+.canvas::after{
+	display:block;
+	clear:both;
+	content:'';
+}
+.clip-left{
+	position:absolute;
+	left:0;
+	top: 0;
+	right:0;
+	bottom:0;
+	width:49px;
+	height:63px;
+	background:url("../images/Clip-left.png") no-repeat;
+}
+
+.canvas .text-box{
+	animation: textFlash 1.5s cubic-bezier(0.23,0.73,0.66,0.97) 2.5s;
+}
+
+.canvas [class*="text-"]{
+	position:relative;
+	display:inline-block;
+	margin-bottom:1rem;
+
+}
+
+.canvas .text-jal{
+	animation: text-jal 2s alternate cubic-bezier(0.23,0.73,0.66,0.97);
+}
+.canvas .text-muk{
+	animation: text-muk 2s alternate cubic-bezier(0.23,0.73,0.66,0.97);
+}
+
+.canvas .text-jal-1,.canvas .text-sal,.canvas .text-ja{
+	animation: textBottom 2s alternate cubic-bezier(0.23,0.73,0.66,0.97);
+}
+.canvas .text-go{
+	animation: text-go 2s alternate cubic-bezier(0.23,0.73,0.66,0.97);
+}
+
+.canvas img{
+	/* width: auto; */
+	margin:0 auto;
+	animation: bounceInUp 2s infinite alternate 2s;
+}
+
+/*가상요소를 사용해 transform:translate를 해보려 했는데 먹히질 않았다.. 그래서 애니메이션을 사용해 글자를 움직임!*/
+
+@keyframes text-jal{
+	0%{
+		transform: translateX(-200%)
+	}
+	100%{
+		transform: translateX(0)
+	}
+}
+@keyframes text-muk{
+	0%{
+		transform: translateX(-300%)
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+@keyframes text-go{
+	0%{
+		transform: translateX(-400%)
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+@keyframes textBottom{
+	0%{
+		transform: scale(0.1);
+	}
+	100%{
+		transform:scale(1);
+	}
+}
+
+@keyframes textFlash {
+  0%{
+  	opacity:1;
+  }
+  25%{
+  	opacity:0;
+  }
+  50%{
+  	opacity:1;
+  }
+  75%{
+  	opacity:0;
+  }
+  100%{
+  	opacity:1;
+  }
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

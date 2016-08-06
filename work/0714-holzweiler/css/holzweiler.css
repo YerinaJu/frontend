@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+body{
+	height:100vh;
+}
+.clearfix::after{
+	display:block;
+	clear:both;
+	content:'';
+}
+
+#holzweiler-header{
+	position:absolute;
+	z-index: 1000;
+	left:0;
+	right:0;
+	top:0;
+	padding:0 75px;
+	height:40px;
+}
+.logo{
+	position:absolute;
+	left:50%;
+	top:20px;
+	transform:translateX(-50%);
+}
+.logo a {
+	display: block;
+}
+.logo a img{
+	display:block;
+	width:270px;
+	height:25px;
+}
+
+
+.global-navi,.global-navi>li,.local-navi>li{
+	float:left;
+}
+.global-navi,.local-navi{
+	padding-top:40px;
+}
+.local-navi{
+	float:right;
+}
+.global-navi>li{	
+	position:relative;
+	margin-right:15px;
+}
+.local-navi>li{	
+	position:relative;
+	margin-left:15px;
+}
+.global-navi a,.local-navi a{
+	overflow:hidden;
+	position:relative;
+	color:#fff;
+	text-decoration:none;
+}
+.global-navi>li>a,.local-navi>li>a{
+	display:block;
+	padding-bottom:0.4em;
+}
+.global-navi>li:hover .menu-depth-1,
+.local-navi>li:hover .menu-depth-1{display:block;}
+.local-navi .menu-bag{
+	color:#ededed;
+}
+.global-navi a::before,.local-navi a::before{
+	position:absolute;
+	left:0;
+	right: 0;
+	bottom:-10px;
+	border-bottom:1px solid #fff;
+	content:'';
+	transition:all 0.3s;
+}
+
+.global-navi a:hover::before,
+.global-navi a:focus::before,
+.local-navi a:hover::before,
+.local-navi a:focus::before
+ {
+	bottom: 8px;
+}
+
+.global-navi .menu-depth-1,.local-navi .menu-depth-1{
+	display:none;
+	position:absolute;
+	top: 28px;
+	left: 0;
+	padding:30px;
+	background-color:#000;
+	color:#fff;
+}
+.global-navi .menu-depth-1{
+	width: 157px;
+}
+.local-navi .menu-depth-1{
+	width:60px;
+}
+.global-navi .menu-depth-1 li,
+.local-navi .menu-depth-1 li{
+	margin-bottom:10px;
+}
+.global-navi .menu-depth-1 a,.local-navi .menu-depth-1 a{
+	display:inline-block;
+}
+#holzweiler-go-shop{
+	position:relative;	
+}
+
+#holzweiler-go-shop video{
+	width:100%;
+}
+.main-text{
+	position:absolute;
+	width:360px;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	text-align:center;
+	color:#fff;
+}
+.latest-essential{
+	font-weight:400;
+	font-size:4.8em;
+	line-height:1.1;
+}
+.shop-now{
+	position:relative;
+	display:block;
+	margin-top:10px;
+	font-size:1.125em;
+}
+
+#holzweiler-go-shop .shop-now::after{
+	display:block;
+	position:absolute;
+	right:120px;
+	top:0;
+	content:'→';
+	transition:all 0.5s;
+}
+#holzweiler-go-shop a:hover .shop-now::after{
+	right:110px;
+	top:0;
+	
+}

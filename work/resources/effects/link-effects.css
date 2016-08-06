@@ -1,0 +1,135 @@
+@charset "UTf-8";
+a{
+	text-decoration:none;
+	/*padding-bottom:2px;*/
+	padding-bottom:0.125rem;
+	/*border-bottom:1px solid;*/
+	border-bottom:0.0625rem solid;
+}
+
+/*배경 색상 페이드 .fade-bg*/
+.fade-bg / .fade-bg.round
+.fade-bg{
+	display:inline-block;
+	vertical-align: bottom;
+	padding:0.25em 0.375em; /*4px 6px;*/
+	transition: all 0.25s;
+}
+.fade-bg.round{
+	border-radius:4px;
+}
+.fade-bg:hover,
+.fade-bg:focus{
+	background-color:#65b1e3;
+	color:#fff;
+}
+
+
+/*
+전 방위 슬라이드 (상하좌우)
+.slide-from-left
+.slide-from-right
+.slide-from-top
+.slide-from-bottom
+*/
+a[class*="slide-"]{
+	position:relative;
+	overflow:hidden;
+	display:inline-block;
+	vertical-align: bottom;
+	padding-bottom:0.06em 0.12em;
+	border-bottom:none;
+}
+a[class*="slide-"]::after{
+	position:absolute;
+	width:100%;
+	content:attr(data-linktext);
+	background:red;
+	color:#fff;
+	transition: all 0.4s;
+	text-align:center;
+}
+
+a.slide-from-left::after{
+	left:-100%;
+}
+a.slide-from-left:hover::after,
+a.slide-from-left:focus::after{
+	left:0;
+}
+a.slide-from-right::after{
+	right:-110%;
+}
+a.slide-from-right:hover::after,
+a.slide-from-right:focus::after{
+	right:0;
+}
+a.slide-from-top::after{
+	top:-100%;
+}
+
+
+
+
+
+/* 언더라인 페이드
+.fade-underline */
+
+.fade-underline{
+	border-bottom:2px solid transparent;
+	transition: all 0.25s ease;
+}
+.fade-underline:hover,
+.fade-underline:focus{
+	color:#c90038;
+	border-bottom-color:currentColor;
+}
+
+
+/*언더라인 슬라이드*/
+a[class*="underline-"]{
+	/*linear-gradient은 키워드로도 사용이 가능합니다 to bottom, to right 등등*/
+	position:relative;
+	vertical-align:bottom;
+}
+
+a[class*="underline-"]::before{
+	content:'';
+	position:absolute;
+	top:100%;
+	border-bottom:2px solid currentColor;
+	transition: all 0.4s;
+}
+a.underline-from-left::before{
+	/*left:0; right:0;이면 좌우로 꽉차게 구현이 가능합니다. 굳이 overflow:hidden을 준 상태로 좌우로 왔다갔다 하는 게 아니라, left값과 right값을 가지고 길이를 조절해서 쓰게 되는 거임! right가 100%면 left:0;처럼 왼쪽으로 밀려났다가 다시 hover가 됐을 때 0으로 하면 스르르 움직이게 되는것!!*/
+	left:0;
+	right:100%;
+}
+a.underline-from-left:hover::before,
+a.underline-from-left:focus::before{
+	left: 0;
+	right:0;
+}
+a.underline-from-right::before{
+	left:50%;
+	right:0;
+}
+a.underline-from-right:hover::before,
+a.underline-from-right:focus::before{
+	left:0;
+	right:0;
+}
+
+a.underline-from-center::before{
+	left:50%;
+	right:50%;
+}
+
+a.underline-from-center::before{
+	left:50%;
+	right:50%;
+}
+a.underline-from-center:hover::before{
+	left:0;
+	right:0;
+}
