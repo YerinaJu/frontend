@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans);
+.product {
+  vertical-align: middle;
+  font-family: Merriweather Sans, Sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+}
+
+.product.dt {
+  text-align: center;
+}
+
+.product.info {
+  padding: 0 20px;
+}
+
+/*# sourceMappingURL=../maps/typo.css.map */

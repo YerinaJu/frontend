@@ -1,0 +1,49 @@
+// base-font
+$base-font-family: Merriweather Sans, Sans-serif;
+$base-font-size: 11px;
+$base-font-weight: weight;
+$base-line-height: 1.5;
+$base-font-style: normal;
+
+// font-weight
+$light: 300;
+$regular: 400;
+$bold: 600;
+
+// font-style
+$italic: italic;
+
+// font-family
+$fixed-font-family: Merriweather, serif;
+
+
+@mixin font(
+	$ff: $base-font-family,
+	$fsz: $base-font-size, 
+	$lh: 1.5,
+	$fw: $regular,
+	$fsl: null,
+	$c: null){
+
+	@import url(https://fonts.googleapis.com/css?family=Merriweather);
+	@import url(https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans);
+
+	font-family:$ff;
+	font-size: $fsz;
+	line-height: $lh;
+	font-weight: $fw;
+	font-style: $fsl;
+	color: $c;
+}
+
+
+.product{
+	vertical-align: middle;
+	@include font($ff: $base-font-family, $fsz: 1.4rem, $c: #fff)
+	&.dt{
+		text-align: center;
+	}
+	&.info{
+		padding: 0 20px;
+	}
+}

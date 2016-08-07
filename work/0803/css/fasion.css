@@ -1,0 +1,149 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans);
+header button {
+  overflow: hidden;
+  width: 1px;
+  font-size: 1px;
+  line-height: 0;
+  text-indent: -9999em;
+}
+
+header::after, .container .product::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+header {
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  padding: 1.5rem;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+header button {
+  border: none;
+  padding: 2em;
+  width: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+body {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  min-width: 37.5rem;
+}
+
+header .btn-back {
+  background: url(../image/arrow.png) no-repeat center;
+}
+
+header .btn-heart {
+  background: url(../image/heart.png) no-repeat center;
+}
+
+header .btn-cart {
+  margin-left: 2rem;
+  background: url(../image/cart.png) no-repeat center;
+}
+
+.container .main-image {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.container .product {
+  padding: 2rem 0;
+  background-color: #333;
+  font-family: Merriweather Sans, Sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+}
+
+.container .product.dt {
+  text-align: center;
+}
+
+.container .product.info {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container .product-select .detail {
+  float: left;
+  width: 33.33333%;
+  background-color: #fff;
+  padding: 3rem 0;
+  font-family: Merriweather, serif;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.container .product-select .detail strong {
+  display: block;
+  height: 3rem;
+  font-family: Merriweather Sans, Sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #ddba76;
+}
+
+.container .product-select .detail em {
+  font-family: Merriweather Sans, Sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #bebebe;
+}
+
+.container .product-select .detail::hover {
+  background-color: #fefefe;
+}
+
+.container .cart-button .button {
+  padding: 2rem 0;
+  width: 100%;
+  border: none;
+  background-color: #ddba76;
+  color: #fff;
+}
+
+.container .cart-button .button.half {
+  width: 50%;
+}
+
+.container .cart-button .button.default {
+  float: left;
+  background-color: #fff;
+  color: #a3a3a3;
+}
+
+/*# sourceMappingURL=../maps/fasion.css.map */
