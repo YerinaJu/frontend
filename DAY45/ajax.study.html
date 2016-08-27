@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>비동기통신을 위한 AJAX를 공부해보자</title>
+	<style>
+		body{
+			margin: 6rem;
+		}
+		.call-ajax-data{
+			border:none;
+			cursor: pointer;
+			background: #d2d2d2;
+			color: #1d1d1d;
+			padding: 0.75rem 1rem;
+		}
+		.call-ajax-data:hover{
+			background-color: #868686;
+		}
+		.call-ajax-data:active{
+			position: relative;
+			top: 1px;
+		}
+		.ajax-result{
+			margin-top: 3rem;
+			border: 3px solid currentColor;
+			padding: 1rem;
+			color: #704bdb;
+		}
+	</style>
+</head>
+<body>
+
+	<button type="button" class="call-ajax-data-btn">view update</button>
+	<div class="ajax-result">
+		ready.......................
+	</div>
+
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	<script src="js/ajax-communication.js"></script>
+</body>
+</html>
