@@ -1,0 +1,31 @@
+@function _fontShortHand( 
+    $fz: 16px,
+    $lh: 1.5
+){
+    @return #{$fz}/#{$lh}
+}
+
+@function padding(
+    $t: null,
+    $r: null,
+    $b: null,
+    $l: null
+){
+    @if ($r == null && $b == null && $l == null) {
+        @return $t
+    }@else if ($b == null && $l == null) {
+        @return $t $e
+    }@else if ($l == null) {
+        @return $t $e $b
+    }@else {
+        @return $t $r $b $l
+    }
+
+    //top, bottom, left, right  값이 1
+    //tom bottom, left right  값이 2
+    // 1 2 3; 값이 3, 3개
+}
+
+
+@function _fontShortHand($fz: 16px, $lh: 1.5)
+	@return #{fz}/#{lh}

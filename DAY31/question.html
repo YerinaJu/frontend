@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button type="button">#ff0</button>
+	<script>	
+
+		var button = document.getElementsByTagName('button');
+		var button1 = button[0];
+		button1.onclick = function(){
+			
+			var changeColor = this.firstChild.nodeValue;
+			body.style.backgroundColor = changeColor;
+
+		}
+	</script>
+</body>
+</html>

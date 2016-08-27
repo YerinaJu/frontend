@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* !grid-system(static).css */
+
+/* 그리드 컨테이너 모듈 */
+.container{
+	width:940px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.container.show-grid{
+	background:url("./images/grid-system.png") repeat;
+}
