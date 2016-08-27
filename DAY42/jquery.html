@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리를 배워보자</title>
+	<script src="../resources/library/jquery-3.1.0.min.js"></script>
+	<script src="js/modernizr.min.js"></script>
+	<script src="js/detectizr.js"></script>
+	<script src="js/jquery.js"></script>
+	<style>
+	
+		body{
+			height: 100vh;
+			margin:0;
+			padding:0;
+		}
+		/*css 포지션 스티키를 지원하는 브라우저: 파이어폭스, 사파리*/
+		.js body{
+			background-color: #25a04d;
+		}
+		/*미지원하는 브라우저: 익스플로러 전부, 크롬, 안드로이드;*/
+		.no-js body{
+			background-color: green;
+		}
+		
+		/*크로스 브라우징으 목적으로 사용자 환경을 감지한 후 대체 방식을 제공한다. ->우아한 기능저하*/
+		.no-cssbotderradius{
+			background-image: url('1.png');
+		}
+		.demo::after{
+			display:block;
+			clear:both;
+			content:'';
+		}
+		button.menu{
+			border: none;
+			background: #fff;
+			width: 30px;
+			height: 30px;
+			float:left;
+		}
+
+		div.canvas{
+			display:none;
+			width: 100px;
+			height:100vh;
+			background-color: pink;
+			float: left;
+		}
+
+	</style>
+</head>
+<body>
+<!-- 
+	<script>		
+	// 제이쿼리 로딩이 됐는지 안됐는지 확인하기\
+
+	window.jQuery ? 
+		document.write('<p>제이쿼리 로딩에 성공!</p>') : 
+		document.write('<p>제이쿼리 로딩에 실패!</p>') ;
+
+		Detectizr.detect({
+			'detectScreens':false,
+		})
+	</script> -->
+	<div class="demo">
+		<!-- <button type="button" class="change-text-button">아래 단락 내용 변경</button>
+		<p>문서객체모델은 아직 준비되지 않았습니다.</p> -->
+		<div class="canvas">dd</div>
+		<button type="button" class="menu">-</button>
+
+	</div>
+	<script>
+		(function(global, $){
+			'use strict';
+
+			// // 문서에서 버튼 .change-text-button을 선택한다.
+			// var $button = $('.change-text-button')
+			// // 선택된 버튼을 사용자가 클릭하면 아래 p 단락 요소의 텍스트 내용을 변경한다.
+			// $button.on('click', function(){
+			// 	//.on('click') = .click() 과 같다. .click()은 .on('click')의 별칭alias다.
+			// 	// .on('click mouseenter keydown') 등 한번에 여러개 연결이 가능하기 때문에 .on을 사용하는 것을 권장한다.
+			// 	// 'click mouseenter keydown'.split('');
+			// 	// = ["click", "mouseenter", "keydown"];
+			// 	// $each(["click", "mouseenter", "keydown"])..................
+			// 	$(this).next().text('버튼을 클릭하면 이 텍스트가 변경된답니다 ^^')
+			// 	// $(this)는 $button 변수를 가르킨다.
+
+			// 	// attr vs property
+			// 	//버튼 한번 클릭되면 클릭 못하게 비활성화 시키기.
+				
+			// 	$(this).attr('disabled', true); // HTML
+			// 	// $(this).prop('disabled', true); // 자바스크립트
+
+			// })
+
+			// //$('.demo').find('p').text('문서객체모델이 모두 준비되어 해당 코드는 문서 객체의 내용을 변경했습니다.')
+			// global.setTimeout(function(){
+			// 	$('.demo p').text('문서객체모델이 모두 준비되어 해당 코드는 문서 객체의 내용을 변경했습니다.');
+			// }, 2000);
+			var $buttonClick = $('.demo .menu').on('click', function(){
+				$('.demo .canvas').css('display','block');
+			})
+		})(this, this.jQuery);
+	</script>
+</body>
+</html>

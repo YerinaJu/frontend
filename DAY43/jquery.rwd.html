@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../resources/library/jquery-3.1.0.slim.js"></script>
+	<script>
+
+		(function($){
+			'use strict';
+
+			// 객체의 key 값을 가져올 수 있는 함수를 만들어보자
+			if(!$.keys){
+				$.keys = function(obj){
+					if($.type(obj) !== 'object'){ throw new Error('객체를 ㅈ전달해야 합니다.')}
+					var keys
+				}
+			}
+		})
+
+		(function(global, $){
+			'use strict';
+			// 페이지가 로드 될 때, 다음의 기기인지를 확인한다.
+			// 모바일일 때 0~767
+			// 타블렛 768 ~ 1024
+			// 데스크탑 1025 ~ 1366
+			// 와이드 스크린 1367
+
+			var $html = $('html'), screen_width = $html.width();
+
+			if($html.width() < 768){
+				console.log('mobile');
+			} else if( screen_width >= 768 && screen_width < 1025){
+				console.log('tablet');
+			} else if( screen_width >= 1025 && screen_width <1366){
+				console.log('desktop');
+			} else {}
+			//----
+			// 창 크기를 조정하면 앞서 수행했던 결과를 다시 실행하여 class 속성 처리를 변경한다
+
+		})(this, this.jQuery);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

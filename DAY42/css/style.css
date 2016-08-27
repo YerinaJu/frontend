@@ -1,0 +1,27 @@
+
+.offcanvas-menu-wrapper{
+	position:relative;
+	float:left;
+	left:-202px;
+
+}
+.toggle-menu-button{
+	position:absolute;
+	top:0;
+	right: -20px;
+	border:1px solid #2d2d2d;
+	padding-top:6px;
+	/*padding-top: 1.2em;*/
+	cursor: pointer;
+}
+.toggle-menu-button span{
+	display:block;
+	line-height:0.4;
+}
+
+.offcanvas-menu{
+	width:200px;
+	height: 100vh;
+	background-color: #e2e2e2;
+	border: 1px solid #2d2d2d;
+}
