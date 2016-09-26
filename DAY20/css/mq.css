@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+body{
+	height:100vh;
+	min-width:30rem;
+	background-color:#fe4940;
+	font:1rem/100vh "Spoca Han Sans", sans-serif;
+	text-align:center;
+}
+
+body::before{
+	content:'mobile view';
+	font-size:6.25rem;
+	color:#fff;
+
+}
+
+/*@media (min-height: 600px) and (orientation: landscape) {*/
+@media (orientation: landscape) {
+	body{
+		background-color:#7045cf;
+	}
+}
+@media (min-width:600px) {
+	body{
+		background-color:#34c0ff;
+	}
+	body::before{
+		content:'Tablet view';
+	}
+}
+@media (min-width: 1000px) {
+	body{
+		background: #ffd219;
+	}
+	body::before{
+		content:'Desktop view';
+}
+@media (max-height:300px) {
+	body::before{
+		content:'mobile view  + min height';
+	}
+}

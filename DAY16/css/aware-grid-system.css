@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+.grid-container{
+	position:relative;
+	width:960px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.grid-container.show-grid::after{
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:200vh;
+	z-index:1000;
+	background:
+		linear-gradient(90deg, rgba(191, 64, 64, 0.3) 120px, transparent 120px),
+		linear-gradient(transparent 9px, #26923f 9px);
+	background-size:
+		240px 1px,
+		1px 10px;
+}
+
+.grid header::after,.grid section::after .grid footer::after{
+	display:block;
+	clear:both;
+	content:'';
+}
+
+[class*="unit-"]{
+	float:left;
+}
+
+.unit-1{ width:120px; } 
+.unit-2{ width:240px; }
+.unit-3{ width:360px; }
+.unit-4{ width:480px; }
+.unit-5{ width:600px; }
+.unit-6{ width:720px; }
+.unit-7{ width:840px; }
+.unit-8{ width:960px; }
+
+.grid [class*="push-"], .grid [class*="pull-"]{
+	position:relative;
+}
+
+.push-1{ left:120px; } 
+.push-2{ left:240px; }
+.push-3{ left:360px; }
+.push-4{ left:480px; }
+.push-5{ left:600px; }
+.push-6{ left:720px; }
+.push-7{ left:840px; }
+.push-8{ left:960px; }
+
+.pull-1{ right:120px; } 
+.pull-2{ right:240px; }
+.pull-3{ right:360px; }
+.pull-4{ right:480px; }
+.pull-5{ right:600px; }
+.pull-6{ right:720px; }
+.pull-7{ right:840px; }
+.pull-8{ right:960px; }
+
+.prefix-1{ margin-left:120px; } 
+.prefix-2{ margin-left:240px; }
+.prefix-3{ margin-left:360px; }
+.prefix-4{ margin-left:480px; }
+.prefix-5{ margin-left:600px; }
+.prefix-6{ margin-left:720px; }
+.prefix-7{ margin-left:840px; }
+.prefix-8{ margin-left:960px; }
+
+.suffix-1{ margin-right:120px; } 
+.suffix-2{ margin-right:240px; }
+.suffix-3{ margin-right:360px; }
+.suffix-4{ margin-right:480px; }
+.suffix-5{ margin-right:600px; }
+.suffix-6{ margin-right:720px; }
+.suffix-7{ margin-right:840px; }
+.suffix-8{ margin-right:960px; }
+
+
+
+
+.header{
+	height:80px;
+	background-color:#fff;
+}
+.header::after{
+	display:block;
+	clear:both;
+	content:'';
+}
+.header .aware{
+	margin-top:30px;
+	height:20px;
+	background-color:#274bb1;
+	color:#fff;
+}
+.header .nav{
+	margin-top:30px;
+	height:20px;
+	background-color:#274bb1;
+	color:#fff;
+}
+.header .right{
+	margin-top:20px;
+	float:right;
+	height:30px;
+	background-color:#274bb1;
+	color:#fff;
+}
+.slider .main-slider{
+	height:480px;
+	background-color:#dbdbdb;
+}
+.slider .inner-wrap a{
+	display:block;
+	height:120px;
+	background-color:#516093;
+}

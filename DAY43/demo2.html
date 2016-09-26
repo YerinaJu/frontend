@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>앵귤러 이해를 위한 실습 2</title>
+	<style>
+		
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body data-ng-init="
+	app = {
+		'name':'DirectiveApp',
+		'switch':'close',
+	};
+">
+	
+
+	<div class="demo-app-container" data-ng-switch="app.switch">
+		<h1 class="demo-app-title">{{app.name}}</h1>
+		<div class="demo-app-switcher">
+			<button data-ng-model="app.switch = 'etc">골라라</button>
+			<button data-ng-model="app.switch = 'open">open</button>
+			<button data-ng-model="app.switch = 'close">close</button>
+		</div>
+		<!-- 상태 제어 -->
+		<p data-ng-switch-when="open" class="switch-is-open">App switch value is open</p>
+		<p data-ng-switch-when="close" class="switch-is-close">App switch value is close</p>
+		<p data-ng-switch-default class="switch-is-something">App switch value is Something</p>
+	</div>
+</body>
+</html>

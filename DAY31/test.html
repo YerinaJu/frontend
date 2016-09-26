@@ -2,74 +2,67 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>버튼을 이용해서 색을 바꿔보자</title>
+	<title>test</title>
 	<style>
-		.btn-group{
+		#box{
 			display: flex;
-			justify-content: center;
-			align-content:center;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: space-around;
+			width: 500px;
+			height: 500px;
+			margin: 0 auto;
+			transform: translateY(20%);
 		}
-		.btn-group button{
-			flex-basis: 80px;
-			border-radius: 3em;
-			border: none;
-			padding: 1em;
-			color: #fff;
-			margin:0 20px;
+		button{
+			display; flex;
+			flex-direction: column;
+			width: 80px;
+			height: 80px;
+			border-radius: 60px;
+			border:none;
 		}
-		/*.btn-group button:nth-child(1){
+		.circle_1{
 			background-color: red;
-		}*/
-		.btn-group button:nth-child(2){
-			background-color: orange;
 		}
-		.btn-group button:nth-child(3){
-			background-color: yellow;
-		}
-		.btn-group button:nth-child(4){
-			background-color: green;
-		}
-		.btn-group button:nth-child(5){
+		.circle_2{
 			background-color: blue;
 		}
-		.btn-group button:nth-child(6){
-			background-color: navy;
-		}
-		.btn-group button:nth-child(7){
-			background-color: purple;
+		.circle_3{
+			background-color: green;
 		}
 	</style>
 </head>
 <body>
-	<div class="btn-group">
-		<button type="button">red</button>
-		<button type="button">orange</button>
-		<button type="button">yellow</button>
-		<button type="button">green</button>
-		<button type="button">blue</button>
-		<button type="button">navy</button>
-		<button type="button">purple</button>
+	<div id="box">
+		<button type="button" class="circle_1">1</button>
+		<button type="button" class="circle_2">2</button>
+		<button type="button" class="circle_3">3</button>
 	</div>
 	<script>
-		var body = document.getElementsByTagName('body');
+		var box = document.getElementById('box');
+		// console.log(box);
 		var button = document.getElementsByTagName('button');
 
-		var button1 = button[0];
+		// console.log(button[0]);
 
-		console.log(button1);
+		button[0].onclick = function (){
+			box.style.background = "url('img/pika.png') no-repeat";
 
-		function changeColor(){
-			this.style.backgroundColor = this.firstChild.nodeValue;
 		}
 
-		button1 = 
-
-		// button1.onclick = function (){
-		// 	console.log('dkkdksdlkjslkfjsflksjdljfk');
-		// 	var changeColor = this.firstChild.nodeValue;
-		// 	body.style.backgroundColor = changeColor;
+		// var button2 = document.getElementsByTagName('button')[1];
+		// // console.log(button1);
+		// button2.onclick = function (){
+		// 	box.style.background= "url('img/ggobug_.jpeg') no-repeat cover";
 		// }
+
+		// var button3 = document.getElementsByTagName('button')[2];
+		// button3.onclick = function(){
+		// 	box.style.background = "url('img/ssi.JPG') no-repeat cover";
+		// }
+
+
 	</script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>부모 요소애 패딩, 보더 값이 얿을 때... 자식 요소의 마진 값은 어떻게 설정되나????</title>
+	<link rel="stylesheet" href="css/common.css">
+	<!-- 모바일 최적화 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.box{
+			width:200px;
+			height:200px;
+			background:#fff;
+			text-align:center;
+			color:#50c0fd;
+			line-height:200px;
+			/*border short properties*/
+			/*색이 없으면 글자색을 상속받습니당*/
+			border:5px solid;
+			border-bottom-width:30px;
+			border-bottom-color:transparent;
+			border-right-color:orange;
+		}
+		.border-solid{border-right-style:solid;}
+		.border-dashed{border-right-style:dashed;}
+		.border-dotted{border-right-style:dotted;}
+		.nanum{
+			font-family:"NanumMyoungjo", "나눔명조", 돋움, Dotum, Sans-Serif;
+		}
+	</style>
+<body class="nanum">
+	<div class="box border-solid">bspapspspaspaspasp넴네메넨멘메넴넴네멘메넴넴넴네멘멘메넴order-solid</div>
+	<div class="box border-dashed">border-solid</div>
+	<div class="box border-dotted">border-dotted</div>
+</body>
+</html>

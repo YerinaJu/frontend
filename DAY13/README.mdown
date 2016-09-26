@@ -1,0 +1,76 @@
+# day17 til
+
+### 타이포그래피
+
+* 참고 http://type-scale.com
+ > 타입 배율을 경험해볼 수 있어여
+1.618은 황금비율이지만 크기가 너무 크기 때문에 작은 수의 배율을 쓰는 것이 좋아여 ㅎㅎㅎㅎ
+
+* 버티컬 리듬
+
+* 타이포 디자인을 em에 맞춰서...!!
+
+본문 디자인 
+
+
+lg{180deg, transparent 95%, red 90%} =>emit의 함수! 백그라운드 이미지 그라디언트를 완성시켜줍니다 ㅎㅎㅎ
+
+body{
+	font-size: 1em; -> 16px
+	line-height:1.5;
+	min-height:100vh;
+	<!-- 바디에 높이값을 설정! -->
+}
+body.E{
+	lg{180deg, transparent 95%, red 90%}
+	
+}
+
+행을 몇 개 쓸 것인지 구하는 법 = ceil( (글자 크기(타입 배율) / line-height 값) ) = 행의 개수!
+행간 = 행 개수 x (line-height / 글자 크기 ) = 나온 수를 무조건 올림!!!!!!!!!!!!!!
+마
+<!-- ceil 올림함수 -->
+
+
+### position
+
+* position (ie6-7에선 힘들다.)
+- static ; 기본 값
+- relative (self) ; 일반 흐름 (normal flow)를 꺠지 않는다.
+- absolute ; 
+	- 일반 흐름을 깬다. float와 유사함, 
+	- display 값이 block으로 변경 된다.
+	- (offsetparent;? 자식 요소를 포함하는 가장 가까운 부모 요소 중에 position 속성이 static이 아닌 부모 요소)absolute가 ㅄ을 제공해야만 한다.적용된 요소의 부모에 relative를 설정하는 이유는?relative는 일반 흐름을 꺠지 않기 떄문입니다.
+	- float와의 차이점?? float의 경우는 부모요소가 flaot된 요소를 감싸게 하는 방법이 있지만, absolute의 경우는 없다!!!! 별도로 height 값을 제공.
+- fixed ; 화면에 상대적 screen과 viewport
+	- 기본적으로는 absolute와 유사하게 처리되어 보이나, 처리 결과는 다르다.
+	- 고정 형태로 위치가 설정된다. 화면 스크롤 과 상관 없이 항상 그자리를 유지한다. fix됨!!!
+- z-index ; position 속성과 함께 사용된다 (static 제외)
+	- 속성 값은 양의 정수, 0 , 음의 정수 사용이 가능하다.
+	> 단, 설정 시 10 또는 100단위로 설정하는 것이 유지보수 관점에서 권장된다.
+	> 그리고, 부모에 상대적이기 때문에 부모가 먼저 떠 있지 않으면, 자식도 z-index값을 넣더라도 다 올라가지 않는다... 한번 경험해바야대
+
+fontawesome 등을 이용하여 접근성 관련 문제 이슈??
+스크린리더에서 폰트를 읽기 때문에 그걸 aria-hidden="true" 값을 먹이면 읽히지 않습니다.
+그런데, 글이 없는 버튼 같은 경우에는 버튼,버튼,버튼버튼버튼만 읽기 때문에 aria-label="value"값을 넣으면 value값을 읽어줍니다.
+
+
+백그라운드 gradient([<shape> at <position>], color-stop (location), color-stop)
+
+shape 그라데이션 모양 circle/ellipse
+
+* 브라우저 창을 가운데로 배치시키는 법
+left:50%,top:50% 후 음수 마진값을 주는 방법.
+
+2. transform:translate(x, y)을 쓴다 ie 10이상부터 지원 / 모바일도 특정부분은 -webkit-을 사용해야합니다.
+left:반,top:반 을 일일히 먹일 수가 없으니까 margin대신 transform을 사용하는고얌~!
+-transform:translate(-50%, -50%)
+transform:translate(-50%, -50%)
+<!-- 모바일 안드로이드 버전 디폴트 값 -->
+-webkit-transform:translate(-50%, -50%)
+<!-- ie9 버전 -->
+-ms-transform:translate(-50%, -50%)
+
+background는 멀티 백그라운드 기능도 설정이 가능함.
+background:url(), url(), url() 식으로 ,를 통해 구분이 된다.
+size나 position같은 값도 ,를 이용해 구분한다. 색상에 쓰이는 hsl값은 h->색상 각도 s->

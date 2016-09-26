@@ -1,0 +1,45 @@
+%reset-list-group ul,
+%reset-list-group ol,
+%reset-list,
+%reset-list {
+  margin-top:    0;
+  margin-bottom: 0;
+  padding-left:  0;
+  list-style:    none;
+}
+
+%rm-img-blank{
+  vertical-align: bottom;
+}
+%rm-img-blank-g img + *,
+img.blank-bottom + *{
+  overflow: hidden;
+}
+
+%rwd-media{
+  width: 100%;
+  height: auto;
+}
+
+%_rwd-media-ratio{
+  width: 100%:
+  height: 0;
+  background-size: cover;
+  background-position: center center;
+}
+// Sass 함수
+@function getMediaRatio($target, $context){
+  @return $target/$context*100%;
+}
+%rwd-media-4-3{
+  @extend %_rwd-media-ratio;
+  padding-bottom: getMediaRatio($target, $context)
+}
+%rwd-madia-16-9{
+  @extend %_rwd-media-ratio;
+  padding-bottom:getMediaRatio($target, $context)
+}
+%rwd-media-21-9{
+  @extend %_rwd-media-ratio;
+  padding-bottom:getMediaRatio($target, $context)
+}

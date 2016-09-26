@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.mario{
+			background:url("images/css-sprite-animation-steps-mario.png") no-repeat;
+			width:40px;
+			height:57px;
+			animation: mario steps(26) 2s infinite;
+		}
+		@keyframes mario{
+			0% { background-position-x: 0; }
+			100% { background-position-x: -1040px; }
+		}
+		.foxtail{
+			width:156px;
+			height:156px;
+			background:url("images/css-sprite-animation-steps-foxtail.png") no-repeat;
+			animation: foxtail steps(44) 3s infinite;
+		}
+		@keyframes foxtail{
+			0% { background-position-x: 0; }
+			100% { background-position-x: -6864px; }
+		}
+		.rachel{
+			width:399px;
+			height:199px;
+			background:url("images/css-sprite-animation-steps-rachel.png") no-repeat;
+			animation: rachel steps(11) 1s infinite;
+		}
+		@keyframes rachel{
+			0% { background-position-y: 0; }
+			100% { background-position-y: -2193px; }
+		}
+	</style>
+</head>
+<body>
+	<div class="mario"></div>
+	<div class="foxtail"></div>
+	<div class="rachel"></div>
+</body>
+</html>

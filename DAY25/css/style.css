@@ -1,0 +1,24 @@
+body {
+  color: _hsla(#3d96ff 0.3);
+}
+
+main {
+  color: #ff0202;
+}
+
+footer {
+  color: #fd0000;
+}
+
+.test {
+  color: #ff0080;
+}
+
+.test1 {
+  color: gray;
+}
+
+.test2 {
+  color: #eba487;
+  background-color: #783114;
+}

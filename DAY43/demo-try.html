@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>앵귤러 이해를 위한 실습 1</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<style>
+		body{
+			margin: 0;
+			min-height: 100vh;
+			background: {{view_color}};
+		}
+	</style>
+</head>
+<body>
+	<!-- 팔레트 토글 버튼 영역 -->
+	<button type="button" class="toggle-palette-btn" data-ng-click="hidden = !hidden">
+	<!-- click할 때마다 true - false가 서로 변경됨 -->
+
+		PALLETE <!-- <span data-ng-hide="hidden">감추기</span><span data-ng-show="hidden">보이기</span> -->
+		{{ hidden ? '보이기' : '감추기'}}
+		<!-- 표현식 -->
+	</button>
+	<p data-ng-bind="hidden ? '감추기' : '보이기'"></p> 
+	<!-- ng-bind를 사용하기 -->
+	
+	<!-- 팔레트 영역 -->
+	<div class="color-palette" data-ng-show="hidden">
+	<label>
+		<input type="radio" value="{{ colors.pink }}" data-ng-model="view_color">pink</label>
+	<label>
+		<input type="radio" value="{{ colors.purple }}" data-ng-model="view_color">purple</label>
+	<label>
+		<input type="radio" value="{{ colors.green }}" data-ng-model="view_color">green</label>
+	<label>
+		<input type="radio" value="{{ colors.yellow }}" data-ng-model="view_color">yellow</label>
+	<label>
+		<input type="radio" value="{{ colors.cyan }}" data-ng-model="view_color">cyan</label>
+
+
+	</div>
+
+	<!-- 팔레트 제어에 따른 뷰 영역-->
+	<div class="color-place-view" data-ng-style="my_style" style="background-color: {{view_color}}"></div>
+</body>
+</html>

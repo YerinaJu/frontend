@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>앵귤러를 배워보자</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body data-ng-app data-ng-init="
+	user_name= '예리나';
+	members = ['예','리','나']; 
+	times ={'one':1};
+">
+<!-- html 뿐 아니라 body에도 붙일 수 있다. -->
+	<h1>{{user_name}}{{[9,2,1].join('-')}}</h1>
+	<p>{{members.join('')}}</p>
+	<p data-ng-bind="user_name +9"></p>
+
+	<span>{{times.one}}</span>
+</body>
+</html>

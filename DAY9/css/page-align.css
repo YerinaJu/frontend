@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/*.page*/
+.page{
+	background: #000;
+	/* width:auto; */
+	width:90%;
+	max-width:900px;
+	min-width:600px;
+	/*height:100vh;*/
+	height:333px;
+	margin:100px auto;
+	background: #7045cf;
+	padding-top:1.25rem;
+	padding-left:1.25rem;
+	/*margin auto는 자동으로 값을 계산하는 것입니다. left만 auto를 주면 빈 공간 중 자동 계싼해서 남은 부분만 left가 가져가는 것, 양쪽에 auto를 주면 양쪽 똑같이 margin값을 나눠 가져갑니다. */
+}
+.inner-page{
+	width:250px;
+	height:111px;
+	padding:10%;
+	background-color:orange;
+}
+
+.print-class-attr::before{
+	display:block;
+	content:attr(data-name);
+	color:#fff;
+	font-size:1.375rem;
+}
+
+/* margin 속기형 
+
+p{
+	margin: value1 value2 value3 value4;
+}
+
+*/

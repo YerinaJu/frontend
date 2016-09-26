@@ -1,0 +1,18 @@
+.wrapper {
+  width: 1200px;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.header {
+  margin-bottom: 24px;
+  background-color: red; }
+
+.container {
+  margin-bottom: 24px; }
+
+.left {
+  width: 380px; }
+
+.footer {
+  height: 96px;
+  background-color: purple; }

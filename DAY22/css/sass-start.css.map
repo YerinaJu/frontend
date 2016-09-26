@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "sass-start.css",
+	"sources": [
+		"../sass/sass-start.sass"
+	],
+	"mappings": "AAAA,AAAA,OAAO,AAAC,CACP,MAAM,AAAC,CAAC,AACP,MAAM,CAAE,IAAK,CACd,gBAAgB,CAAE,GAAI,CACtB,MAAM,CAAE,KAAM,CAAG",
+	"names": []
+}

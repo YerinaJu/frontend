@@ -1,0 +1,8 @@
+
+body.show-grid::before{
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	background-image:linear-gradient (transparent 95%, #fc414b 95%);
+}

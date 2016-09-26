@@ -1,0 +1,7 @@
+// ie 7 핵 믹스인
+=ie7hack($selector)
+	*+html #{selector}
+		@content
+
++ie7hack('.demo')
+	color: #ff0

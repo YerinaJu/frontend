@@ -1,0 +1,16 @@
+body {
+  margin: 0; }
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+  .container .row::before, .container .row::after {
+    content: '';
+    display: table; }
+  .container .row::after {
+    clear: both; }
+  .lt-ie8 .container .row {
+    zoom: 1; }
+
+/*# sourceMappingURL=../map/sass-review.css.map */

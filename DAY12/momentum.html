@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="../resources/initialization/normalize.css">
+	<link rel="stylesheet" href="../resources/initialization/common.css">
+	<link rel="stylesheet" href="css/momentum.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+
+</head>
+<body>
+	<main>
+		<div class="main-text">
+			<time>11:10</time>
+			<strong>Good&nbsp;evening,&nbsp;yerina!</strong>
+			<form>
+				<input type="text">
+			</form>
+		</div>
+		<a href="#" class="links">
+			LINKS
+		</a>
+		<a href="#" class="weather">
+			24&nbsp;SEOUL
+		</a>
+		<div class="main-bottom clearfix">
+			<a href="#" class="settings">
+				Hoher&nbsp;Kasten,&nbsp;Appenzell&nbsp;Alps,&nbsp;Switzerland
+			</a>
+			<cite class="cite">&ldquo;Believe yon can and you&prime;re halfway there</cite>
+			<span class="none">냠냠</span>
+			<a href="#" class="to-do-list">
+				TO&nbsp;DO
+			</a>
+		</div>
+	</main>
+	<script>
+		var background = new Array("https://images.unsplash.com/photo-1461295025362-7547f63dbaea?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=9c3c96e59ca6b6e66358b9bc2b8ad815","https://images.unsplash.com/photo-1465158753229-aa725fff85a1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1b1d5afac6ea6583b441b809b188bdae","https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=61282cfeed75871385c84c2a44a8e594","https://images.unsplash.com/photo-1465415513839-55341da57a98?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0e97de2997a5d5cab1d3e1d4d3d00cd8");
+
+		var value = Math.round(Math.random()*4);
+
+		document.write("<body {background-image:url('+background[value]+')}>");
+	</script>
+</body>
+</html>

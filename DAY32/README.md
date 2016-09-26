@@ -1,110 +1,159 @@
-# day32
+#DAY36 TIL
 
-## DOM
-##### DOM lv.0
 
-**form**
-a 요소가 네임을 가지고 있으면 anchor
-a 요소가 href를 가지고 있으면 links
+함수 내부에 this를 사용할 수 있다. 함수에서 사용하는 this는 함수를 사용한 주체를 가져오기 때문에 어떤 선택자를 가져올 때 굳이 지정하지 않아도 this를 사용하여 선택자를 가져올 수 있겠지?
 
-> 오늘날에는 네임을 사용하지 않지만, form에서는 서버에 전송할 떄 이름값이 있어야만 식별이 가능하기 때문에 name을 사용하면 좋다.
-> 자바스크립트에서는 -를 지원하지 않는다. form.primary-form => form['primary-form']
+클릭이벤트와 포커스 이벤트를 사용할 때 포커스를 했을 때 엔터를 치면 이벤트가 감지되는 것이 아니라 바로 탭이 갈대마다 이벤트를 발생시키면 클릭과 포커스 상태가 두개 체크된다
 
-`document.forms[0].onsubmit = validateform; ` => 서버단에 요청하기 전에 프론트단에서 이미 값을 validate해 줄 수 있다.!
+이벤트와 연결된 함수에서만 이벤트 function(event)를 사용할 수 있다.... 무슨 소리인지는 차차 알게될거야
 
-> form요소에는 접근성을 위해 label이 무조건 있어야 한다! label과 placeholder 는 엄연히 다르기 때문에, 대체해서는 안된다.
+## 자바스크립트 코어 함수
+- 자바스크립트 언어의 기초이자, 프로그래밍 언어의 기본
 
-**중급 DOM**
+### 명령문
+- 명령문이 끝날 때 세미콜론을 사용해야 한다.
+- if문이나 함수 등의 중괄호 뒤에는 붙이지 않는다
+> js힌트를 사용해서 문법검사를 사용할 수 있다.
 
-`document.all `
+- .점 연산자(dot syntax)로 연결되는 구문을 channing 구문이라 한다.
+- console.log()을 디버깅 목적으로 사용할 수 있다.
+> console.info()/console.error() 등도 있다.
+
+### 주석
+- // 한 줄 주석 
+- /* 여러 줄 주석 */
+
+## 변수
+- 하나의 값을 저장하는 기억장소 (오직 하나의 값만 가능하다.)
+- 숫자, 문자, 논리, 객체, 배열, 함수 값들을 넣을 수 있다. (문서객체를 넣는 것도 된다.)
+- variables의 var 변수이름 = 정보유형; (값)
+- ES 새로운 버전에서는 var 말고 let이나 const를 사용할 수 있다. let은 전역변수를 지역변수로, const는 상수를 정의해준다.
+- 변수이름의 작성규칙
+	* 숫자가 먼저 올 수 없다
+	* $ _를 제외한 특수문자 사용 불가
+	* 공백 불가
+	* 대문자 사용하지 마세요
+- 변수 참조란? ; 바로 가기 기능처럼 해당 변수의 값을 참조만 해온다. 실제 값을 가지고 있지는 않다.
 ```
-if(document.all){
-	// IE에서 지원
-	console.info('ie다!')
-} else {
-	// Nescape Navigator에서 지원 ('NN이다!')
+var brand = documnet.getElementById('brand');
+
+// 이미 document 객체에 담겨있기 때문에 값을 참조해서 불러오는 것! 실제 변수 안에 값을 복사해서 담기는 것은 아니다.
+// 원시 데이터 유형(숫자, 문자, 논리, undefined, null)의 경우 값이 복제가 된다.
+
+var a = 9
+var b = a
+a = 9
+b = 9
+a = 12
+b = 9
+
+// 자료형 데이터 유형(객체, 배열, 함수)의 경우 값이 참조가 된다.
+
+var obj = {'name': '점심시간'};
+obj.name = '점심시간';
+var obj2 = obj;
+obj2.name = '점심시간';
+
+obj2.place = '점심먹자';
+obj2 = {'name':'점심시간','place':'점심먹자'};
+obj = {'name':'점심시간','place':'점심먹자'};
+// 값을 바로가기처럼 불러오기 때문에 obj2의 값이 바뀌면 obj 또한 같이 바뀌게 된다.
+
+```
+
+### 상수
+- const 상수이름 = 정보유형
+- 항상 그대로인 값을 상수라고 한다.
+- 처음에만 담기며, 값이 바뀌지 않는다.
+- 대문자로 작성하며, 변수와 구별한다.
+`const CHAR_SEX = 'male';
+- 일반적으로 많이 사용되지는 않는다.
+- 원래 지원이 많이 되지는 않지만, 크롬에서는 사용이 가능하다.
+
+
+
+
+## 정보 유형
+### 숫자형
+- 단위를 제외한 숫자이며 8, 10, 16진수로 표현이 가능하다.
+
+### 문자형
+- "",''
+- ""내부에 ''를 사용할 경우, backslash를 사용한다.
+```
+"I'm a Teacher."
+"I'/m a Teacher."
+```
+
+### 논리형
+- true(1), false(0)
+- false는 0이나, 빈 문자일 경우 false가 된다. 공백이 있다면 true값을 반환한다.
+- falsy 값은 false, 0, '', null, undefined
+- undefined와 null은 둘 다 아무것도 없음을 의미한다.
+- 변수의 초기값은 undefined를 뱉어낸다.
+- 어떤 값도 아닌 특수한 값 = null 
+> null을 대입할 시에 기존의 값이 제거되고 현재 비워진 상태를 의미하며, 이벤트 속성에 null을 대입할 경우 이벤트를 제거할 수 있게 된다.
+> 한 번만 실행하는 이벤트를 만들 수 있다.
+- 자바스크립트는 자동으로 데이터 유형이 변경될 수 있다. (약점)
+
+**형변환**
+- 데이터 유형을 변환시키기.
+- 1. 숫자형을 문자형으로
+	* `"9"` // 데이터를 빈 문자로 감싼다.
+	* `9 + ""` // 데이터에 빈 문자를 더한다.
+	* `string(9)` // String 메소드로 감싼다.
+	* `(9).toString()` // 데이터에 .toString 메소드를 사용한다. 
+	* 주의할 점: 숫자, 함수 리터럴(그 자체의 값)의 경우는 오류가 발생하기 때문에, 오류가 발생하는 객체는 괄호()로 감싸줘야 한다.
+- 2. 문자형(문자형이지만 숫자인 값)을 숫자형으로
+	* `-`,`*`,`/` ; 사칙연산 // 데이터와 숫자를 빼거나, 곱하거나, 나눈다. 그러나 +을 할 경우 뒤에 붙은 숫자형이 문자형으로 바뀌며 문자로 더해진다.
+	> 문자형에 단위가 붙은 숫자는 숫자로 인식되지 않는다. 결과값은 NaN
+	* `+"9"` // 데이터 앞에 +를 붙인다.
+	* `Number("9")` // Number생성자에 데이터를 넣는다.
+	* `parseInt()` 어떤 값이든 정수로 반환한다.// 
+	```
+	parseInt(fontSize, 10);
+	// 몇 진수를 쓸 건지 지정해줘야 한다.
+	parseFloat(fontSize, 10);
+	// 어떤 값이든 실수까지 반환한다.
+	```
+- 3. 논리형
+	* `Boolean()` // 값을 던지면 true 또는 false 값을 반환한다.
+	* ! || !! // !를 넣으면 값의 불린형을 반대로, !!를 넣으면 값의 유형을 반환한다.
+
+
+
+
+> 인라인 스타일이 아닌 해당 요소의 스타일을 가져오기
+> ```
+> // 비 표준 MS IE 방식 (~ IE8)
+> $0.currentStyle.fontSize
+> // 표준 방식 (IE9 ~)
+> // window.getComputedStyle(대상, 가상요소).스타일속성
+> window.getComputedStyle($0,null).fontSize
+> ```
+
+
+
+
+
+
+#### 보충
+
+**for(var i=0, l=buttons.length;)**
+```
+var button;
+var l=buttons.length;
+
+for(var i=0; i<l; i++){
+	button = buttons.item(i);
+	button.onclick = function(){
+		console.log('click');
+	}
 }
-// 옛날 legacy코드! 좋지 않음. 지금은 document.all은 모두 지원한다. 지금은 쓰지 않는다.
-```
-##### DOM lv.1 표준화 
-
-DOM 표준화가 진행되어 정식으로 제정됨.
-```
-document.documentElement
-document.getElementsByTagName()
-document.getElementsByID()
-// 지금도 사용함
--------------------------------------------------------------------
-
-var root_element;
-root_element = document.documentElement;//html 문서
-root_element = document.getElementsByTagName('html')[0];//xml,html문서에서만 사용 가능
-console.log(root_element); //<html> - 비표준 ie에서는 body를 가리키게 된다.
-
-var head = document.head;
-var body = document.body; //html에서만 사용 가능.
-
-// xml과 html에서 쓸 수 있는 코드가 다르다!
-
-var inputs = document.getElementsByTagName('input');
-var buttons = document.getElementsByTagName('button');
-console.log('inputs:', inputs);
-console.log('buttons:', buttons);
+// 일 때, ()안에 들어 있는 변수는 전역변수로 쓰인다. 자바스크립트 엔진이 자동으로 for밖으로 변수를 빼기때문에 쓰지 않아도 가능함.
 ```
 
-* id 속성을 통한 접근 방법(interface: selecting)
-```
-var c_id = document.getElementById('c_id');
-var c_mail = document.getElementById('c_mail');
-console.log('c_id:'c_id);
-console.log('c_mail:'c_mail);
-```
 
-##### DOM lv.2
+#### 참고
+[네이밍 규칙 BEM](https://en.bem.info/methodology/naming-convention/)
 
-현재 사용되는 진보된 이벤트 모델 제시.
-(표준으로 제정된 lv.4에서는 커스텀할 수 있는 이벤트가 지정되었다~~~~)
-
-
-##### DOM property(DOM 속성) <br>객체가 소유한 속성
-
-**node interface**
-- node가 제공하는 인터페이스를 사용한다.
-`document. `으로 시작한다.
-```
-// html 접근하기
-document.documentElement;
-document.getElementsByTagName('html') -> xml에서 지원
-
-// head와 body 접근하기
-document.head;
-document.body; //쉽게 접근이 가능하다.
-```
-```
-<p>
-	<strong>Hello</strong>How are you doing?
-</p>
-
-<!-- script -->
-var first_para = document.getElementsByTagName('p').item(0);
-var first_para_nodes = first_para.childNodes;
-
-console.log(first_para_nodes[0].nodeType === document.ELEMENT_NODE);
-// p 바로 밑에 공백은 textnode로 인식한다.
-console.log(first_para_nodes[1].nodeType === document.ELEMENT_NODE);
-console.log(first_para_nodes[2].nodeType === document.TEXT_NODE);
-
-= false
-= true
-= true
-
-> ELEMENT_NODE 대문자는 상수로 사용한다.
-> document.ELEMENT_NODE 대신 요소 속성을 의미하는 숫자 1을 넣을 수 있다.
-> document.TEXT_NODE 텍스트 속성은 3
-```
-
-**자식노드**
-- parentNode
-- firstChild
-- lastChild
-- childNodes[0,1,2....]

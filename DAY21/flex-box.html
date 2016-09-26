@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>flexbox layout</title>
+	<link rel="stylesheet" href="../resources/initialization/common.css">
+	<link rel="stylesheet" href="../resources/initialization/normalize.css">
+	<style>
+	body{
+		margin:3rem;
+	}
+		.flex-container{
+			display:flex;
+			flex-direction: row;
+			height:200px;
+			flex-wrap: nowrap;
+			/*float를 준 것처럼 나란히 정렬이 됩니다!*/
+			/*flex-direction: row;*/
+			/*기본 값은 row! row-reverse는 반전!*/
+			/*float:right랑 비슷;*/
+			/*flex-wrap:nowrap;*/
+			margin:2rem 0;
+			border:2px solid #333;
+			/*padding:0.625rem;*/
+		}
+		.flex-items{
+			
+			margin-bottom:25px;
+			background:#333;
+			color:#fff;
+			height:60px;
+		}
+		.item-1{background:#f0a518;width:250px;}
+		.item-2{background:#1eb1ec;}
+		.item-3{background:#e90058;}
+		.item-4{background:#3c3c3d;}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, temporibus, nemo obcaecati assumenda quidem rem ipsam eum laboriosam eius possimus mollitia inventore, doloribus incidunt aspernatur ratione corporis ullam iusto alias?</p>
+	<img src="http://placehold.it/300x300/bdbdbd/000/?text=AAA" alt="AAA">
+	<div class="flex-container">
+		<div class="flex-items item-1">flexbox 1</div>
+		<div class="flex-items item-2">flexbox 2</div>
+		<div class="flex-items item-3">flexbox 3</div>
+		<div class="flex-items item-4">flexbox 4</div>
+		<!-- <div class="flex-items item-1">flexbox 1</div>
+		<div class="flex-items item-2">flexbox 2</div>
+		<div class="flex-items item-3">flexbox 3</div>
+		<div class="flex-items item-1">flexbox 1</div>
+		<div class="flex-items item-2">flexbox 2</div>
+		<div class="flex-items item-3">flexbox 3</div>
+		<div class="flex-items item-1">flexbox 1</div>
+		<div class="flex-items item-2">flexbox 2</div>
+		<div class="flex-items item-3">flexbox 3</div>
+		<div class="flex-items item-1">flexbox 1</div>
+		<div class="flex-items item-2">flexbox 2</div>
+		<div class="flex-items item-3">flexbox 3</div> -->
+	</div>
+	<img src="http://placehold.it/200x250/000/fff/?text=normal flow" alt="normal flow">
+</body>
+</html>

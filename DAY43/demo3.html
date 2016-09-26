@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>앵귤러 이해를 위한 실습 Part 3</title>
+  <style>
+  pre {
+    padding: 1rem;
+    background: #ececec;
+    border-radius: 4px;
+  }
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body data-ng-init="
+order_reverse = true;
+people = [
+  {
+    'name'    : 'tomy',
+    'age'     : 23,
+    'mail'    : 'tomy@study.com',
+    'birthday': '2001-09-02',
+    'has-money': 5300,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/34c0ff/fff/?text=tomy'
+    }
+  },
+  {
+    'name'    : 'sunny',
+    'age'     : 32,
+    'mail'    : 'SUNNY@STUDY.COM',
+    'birthday': '1982-02-17',
+    'has-money': 10200,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/7045cf/fff/?text=sunny'
+    }
+  },
+  {
+    'name'    : 'zeus',
+    'age'     : 61,
+    'mail'    : 'zeus@study.com',
+    'birthday': '1109-01-01',
+    'has-money': 1000000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=zeus'
+    }
+  },
+  {
+    'name'    : 'Aron',
+    'age'     : 18,
+    'mail'    : 'aron@study.com',
+    'birthday': '1998-11-21',
+    'has-money': 121900,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=aron'
+    }
+  }
+];
+">
+
+
+<button type="button" data-ng-click="order_reverse = !order_reverse">내름차</button>
+<input type="search" data-ng-model="search.mail">
+<input type="search" data-ng-model="search.age">
+<input type="text" data-ng-model="limit_count">
+<label for="order">
+<input type="radio" id="order" name="order">
+오름차순
+</label>
+
+ <pre>{{search|json}}</pre>
+
+<table class="people-list" data-ng-init="sortBy='name'">
+  <!-- 시작: people.length 개수만큼 반복하여 <li> 템플릿 완성 -->
+  <!-- orderBy 필터 -->
+  <tr>
+  	<th>
+  		name
+		<button type="button" data-ng-click="order_reverse = !order_reverse;"></button>
+  	</th>
+  	<th>age<button type="button" data-ng-click="order_reverse = !order_reverse;"></button></th>
+  	<th>email</th>
+  	<th>birthday</th>
+  	<th>has-money</th>
+  	<th>picture</th>
+  </tr>
+  <tr data-ng-repeat="person in people | filter: search | limitTo: limit_count | orderBy: 'age':order_reverse">
+ 
+  <!-- uppercase 필터 -->
+    <td data-ng-bind="person.name | uppercase"></td>
+    <td data-ng-bind="person.age"></td>
+    <!-- lowercase 필터 -->
+    <td data-ng-bind="person.mail | lowercase"></td>
+    <!-- date 필터 -->
+    <td data-ng-bind="person.birthday | date:'yyyy년 MM월 dd일'"></td>
+    <!-- angular 필터 (|) -->
+    <!-- Currency:Symbol:FrectionSize -->
+    <!-- <td data-ng-bind="person['has-money'] | currency:'EURO(€) ':0"></td> -->
+    <td>{{ person['has-money'] | number:0 }}원</td>
+    <td>
+      <!-- ngSrc: Lazy Loading (게으른 로딩) -->
+      <img
+        data-ng-src="{{ person.picture.src }}"
+        alt="{{ person.name }}"
+        width="{{ person.picture.width }}"
+        height="{{ person.picture.height }}"
+      >
+    </td>
+  </tr>
+  <!-- 종료: people.length 개수만큼 반복하여 <li> 템플릿 완성 -->
+</table>
+
+<pre>
+<code>
+<!-- JSON 필터 -->
+{{ people | json }}
+</code>
+</pre>
+
+</body>
+</html>

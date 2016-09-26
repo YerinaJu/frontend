@@ -1,0 +1,18 @@
+#process-A .demo {
+  height: 50px;
+  width: 60px; }
+
+#process-A .navigation {
+  width: 20px;
+  height: 20px; }
+
+#process-B .carousel {
+  background: #000; }
+
+.button, header {
+  padding: 20px;
+  border: 1px solid #fff;
+  background: blue; }
+
+header {
+  height: 10px; }

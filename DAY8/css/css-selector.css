@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+body{margin:0 10%;}
+
+/*
+속성 선택자
+[attr]
+[attr="value"]
+[atrr|="value"]
+[attr~="value"]
+*/
+
+/*[class]{
+	border: 1px dashed #cacaca;
+}*/
+
+[class~="container"]{
+	border:1px dashed #cacaca;
+}
+
+[class~="nation"]{
+	text-decoration:underline;
+}
+[lang|="en"]{
+	font-size:20px;
+	color:blue;
+}
+
+
+
+/*
+상태디자인(state design) 선택자
+기본 상태
+마우스가 올라간 상태 (hover)
+커서로 누른 상태(active)
+*/
+
+.container p{
+	margin-top:0;
+	margin-bottom:0;
+	padding:0.88em;	
+	color:#84888a;
+	background: #fff;
+}
+/*기본 상태*/
+
+.container p:hover{
+	color:#0c0d0d;
+	background: #bfbfbf;
+}
+/* 요소뒤에 :가 들어가면 가상 클래스를 의미합니다./ 커서가 올라간 상태 hover */
+/* Pseudo CLass: 가상(유사, 의사) 클래스 */
+
+.container p:active{
+	color:#fff;
+	background-color:#000;
+}
+/* 커서로 누른 상태 (active) */
+
+/*
+하이퍼링크 (<a href>)
+상태 디자인 (state design)
+가상(유사, 의사) 클래스
+pseudo class
+------------------------------
+:link 기본
+:visited 방문한 상태
+:hover 커서가 올라간 상태
+:active 커서로 누르고 있는 상태
+:focus 키보드 포커싱 상태
+*/
+
+
+/*기본 상태*/
+/*=a:link{}*/
+a{
+	display:inline-block;
+	padding-left:0.25em;
+	/*em의 효과; 브라우저를 확대시키거나 글씨의 크기가 커질수록 상대적인 값을 넣어야 크기가 일정해집니다.*/
+	padding-right:4px;
+	text-decoration:none;
+	color:#000;
+	background-color:#ebebeb;;
+}
+기본 상태일 때 link임을 시각적으로 표시해야함.
+
+
+/*방문한 상태*/
+/* 사용자가 방문한 경로를 표시할 수 있습니다. 사용성 향상~! */
+/* visited의 스티일 지정은 `color`관련만 가능합니다. image지정은 X */
+a:visited{
+	background-image:url(../images/external.png);
+	background-repeat:no-repeat;
+	background-position:0 4px;
+	background-color: orange;
+
+}
+
+/*커서 올라간 상태*/
+a:hover{
+	display:inline-block;
+	margin-top:-5px;
+	text-decoration:underline;
+	/*글씨 색을 상속받는다*/
+
+	/*padding-bottom:3px;
+	border-bottom:3px solid;*/
+	/*underline을 쓰면 g나 y같은 애들이 밑에 달라붙게 되니까 padding값을 줘서 떨어뜨리고 border-bottom으로 unederline을 대신할 수도 있습니다.*/
+}
+/*커서로 누른상태*/
+a:active{
+	background-color:#ff0;
+}
+
+/*키보드 포커싱 상태*/
+a:focus{
+	outline:3px solid #fc414b;
+	/*화면 상태 표시*/
+	/*outline ; border는 좌표값때문에 움직이지만,아웃라인은 고정된 테두리입니당*/
+}
+/*focus의 기본 값은 브라우저마다 다릅니다. 그래서 outline디자인을 입히면 아주 좋습니다*/
+
+a:focus:hover{
+	outline-offset:10px ;
+	/*offset ; 거리*/
+}
+/*가상클래스를 1개이상 조합도 가능합니다*/
+
+.box{
+	display:inline-block;
+	margin-top:20px;
+	margin-right:20px;
+	width:200px;
+	height:200px;
+	outline:none;
+	/*다른 요소에 영향을 주지 않습니다!*/
+	background-color:#efefef;
+}
+.box:hover{
+	outline:10px solid #fe4940;
+}
+
+
+
+/*rounded-box*/
+.rounded-box{
+	width:200px;
+	background-color:#eee;
+
+}
+
+.rounded-box :first-child{
+
+}
+
+:lang(es){
+	/*스페인어사용;*/
+	}
+:lang(ja){
+	/*일본어 사용*/
+};
+
+/*
+.boxed :last-child{
+	background-color:#ededed;
+}*/
+
+
+
+
+
+
+/* 
+가상(유사, 의사) 요소
+가상으로 요소(컨텐츠)를 만들어 줍니다.
+
+::first-line ; :first-line
+::first-letter ; :first-letter
+::before ; :before
+::after ; :after
+css2에서는 ':'로도 쓰지만, 3버전이 되면서 ::두개로 바꼈음
+*/
+
+.dropcap-demo::first-letter{
+	color:#888;
+}
+.dropcap::first-letter{
+	font-size:300%;
+	color:#ec0904;
+}
+.dropcap::first-line{
+	color:blue;
+	font-size:13px;
+	line-height:1;
+}
+
+/* :before / :after */
+abbr{
+	cursor:help;
+}
+
+.msg::before{
+	content:'에에에';
+}
+.msg::after{
+	content:'아아아';
+}
+/*before나 after속성은 자식요소처럼 쓰입니다. 텍스트로 인식하는 것 X, 이미지로 쓰이기 때문에 접근성은 꽝/ 기본 속성은 inline이라서 display:block으로 먹고 시작합니다.*/
+
+.msg :first-child{
+	color:blue;
+}
+.msg p:first-child{
+	color:orange;
+}
+
+/* 접근성 관점에서 링크의 주소를 출력하는 스타일 */
+/* ctrl+p 누르면 출력모드로 변합니다. 링크가 제대로 표시가 되는지 확인해보세요 ^-^ */
+
+@media print{
+	a::after{
+
+	content:'('attr(href)')';
+	/*css의 함수 */
+	color:#fc4a54;
+
+	}
+
+	abbr::after{
+		content:'('abbr(title)')';
+	}
+
+}
+
+.parent *:not(a):not(p){
+	border:1px solid #b64926;
+}
+
+/* 사용자가 커서로 클릭 후, 텍스트 블록을 선택할 경우 가상으로 요소를 만들어 디자인 */
+p::selection{
+	text-shadow:2px 3px 2px #6300b5;
+	background-color:#fc4b55;
+	color:#fff;
+}
+p::-moz-selection{
+	text-shadow:2px 3px 2px #6300b5;
+	background-color:#fc4b55;
+	color:#fff;
+}
+
+
+
+
+
+.boxed .child .child:last-child{
+	color:red;
+}
+.boxed .child :first-child{
+	color:blue;
+}
+
+
+
+
+
+

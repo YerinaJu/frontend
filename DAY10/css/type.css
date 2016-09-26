@@ -1,0 +1,59 @@
+@charset "utf-8";
+html{
+	font-size:100%; /*16px*/
+}
+
+body{
+	font-family: 'Spoqa Han Sans';
+	margin-left:auto;
+	margin-right:auto;
+	width:80vmax;
+	font-size:16px;
+	background: url(../images/24px.png);
+	line-height:1.5;
+	text-align:justify;
+	white-space:nowrap;
+}
+img{vertical-align:bottom;}
+
+	.small-caps{
+		font-variant: small-caps;
+		text-decoration: blink;
+	}
+	.uppercase{
+		text-transform: uppercase;
+	}
+	.lowercase{
+		text-transform: lowercase;
+	}
+	.capitalize{
+		text-transform: capitalize;
+	}
+
+
+	font속기형 작성법
+	기본 작성법
+	font: size/line-height family (필수!)
+	font- : style weight() size/line-height family; (선택);
+
+	.font-short-properties{
+		font:1.2rem/2rem Helvetica, Sans-Serif;
+		font:italic 1.2rem/2rem Helvetica, Sans-Serif;
+		font:bold 1.2rem/2rem Helvetica, Sans-Serif;
+		font:bold italic 1.2rem/2rem Helvetica, Sans-Serif;
+		font:italic bold 1.2rem/2rem Helvetica, Sans-Serif;
+		font:italic bold small-caps 1.2rem/2rem Helvetica, Sans-Serif;
+	}
+
+	/* IR테크닉(이미지 대체 기법) */
+
+	.brand-a{
+		background-image:url("https://cdn3.iconfinder.com/data/icons/social-media-set-3/60/twitter2-32.png");
+		background-repeat:no-repeat;
+		text-indent:-9999em;
+		width:32px;
+		height:32px;
+	}
+	.brand-a a{display:block;}
+
+	

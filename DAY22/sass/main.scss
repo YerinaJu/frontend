@@ -1,0 +1,19 @@
+// main.sass
+.container
+	margin-bottom: 24px
+
+.container::after
+	display: block
+	clear: both
+	content: ''
+
+.left
+	float: left
+	width: 380px
+	margin-right: 10px
+	background-color: yellow
+
+.right
+	float: right
+	background-color: blue
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 박스 모델 크기 설정</title>
+</head>
+<style>
+	body{
+		margin:5% 15%;
+		font:1rem/1.5 Verdana;
+		color: #494949;
+	}
+
+	/*박스 디자인*/
+	[class$="-box"]{
+		width:240px;
+		padding-top:0.45rem;
+		padding-bottom:0.45rem;
+		margin-bottom:1rem;
+		outline:1px dotted #484848;
+		text-align:center;
+		/*box-sizing 비교*/
+		border:5px solid #b9121b;
+		padding-left:20px;
+	}
+	.content-box{
+		box-sizing:content-box;
+		background:#f6e497;
+	}
+	.border-box{
+		box-sizing:border-box;
+		background:#cab34e;
+	}
+
+	/*.container*/
+	.container{
+		background:#eee;
+	}
+
+	.clearfix::after{
+		content:'';
+		display:block;
+		clear:both;
+	}
+	.col{
+		float:left;
+		width:33.333333%;
+		text-align:center;
+		color:#fff;
+		box-sizing:border-box;
+
+	}
+	.col:nth-child(1){
+		background:#8e2800;
+	}
+	.col:nth-child(2){
+		background:red;
+	}
+	.col:nth-child(3){
+		border-left:100px solid #000;
+		background:blue;
+	}
+</style>
+<body>
+	<div class="content-box">content-box</div>
+	<div class="border-box">border-box</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">column</div>
+			<div class="col">column</div>
+			<div class="col">column</div>
+		</div>
+	</div>
+</body>
+</html>

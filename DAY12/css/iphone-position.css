@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+body{
+	text-align:center;
+	background: #c3b291;
+}
+.wrapper{
+	position:relative;
+	margin-top:1100px;
+	margin-left:auto;
+	margin-right:auto;
+	width:820px;
+	height:487px;
+	background:url(../Resources/Back-SpaceGray.png) no-repeat 0 0;
+	
+}
+
+.back{
+	
+}
+.sim{
+	position:absolute;
+	right:-58px;
+	top:229px;
+}
+.memory{
+	position:absolute;
+	left:25px;
+	top:-98px;
+}
+.battery{
+	position:absolute;
+	left:62px;
+	top:-300px;
+}
+.homebutton{
+	position:absolute;
+	left:122px;
+	top:-220px;
+}
+.front{
+	position:absolute;
+	left:9px;
+	top:-671px;
+}
+.screenborder{
+	position:absolute;
+	left:59px;
+	top:-803px;
+}
+.screen{
+	position:absolute;
+	left:59px;
+	top:-928px;
+}
+.glass{
+	position:absolute;
+	left:7px;
+	top:-1068px;
+
+}

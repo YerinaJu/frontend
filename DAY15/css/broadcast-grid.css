@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+body{
+	width:1440px;
+	margin:0 auto;
+	background-color:#ccc;
+	background-color: linear-gradient
+}
+

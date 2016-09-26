@@ -1,94 +1,78 @@
-#0621 DAY6 내용정리
--
+# 0622 DAY7 복습
 
-### 웹 환경 이해하기
--
+###script
+* `<script>`는 head 마지막에 부르는 것이 좋다. 스크립트는 파일 불러오는 방식이 직렬 방식이기 때문에 `<style>`요소가 더 먼저 선언되어야 함.
+* object - 이미지 오디오 비디오 액션 플래시 등을 넣을 때 썼지만 요즘은 거의 쓰지 않음.
+> `<object type="image/gif"><p>대체 텍스트</p></object>`
+*parameter - param
 
-### form
-내용 복습
+### 인용
+- 긴 인용 `<blockquote></blockquote>`
+-짧은 인용 `<q></q>`
+
+### 축약
+*abbr 표준 축약어 - abbreviation (ie6에서는 abbr을 쓰지 못합니다 ie6에선 acronym-비표준)
+* address 이메일 주소 등 웹 상에서 연결될 경로를 넣는것 p/div 같은 block 요소는 쓰지 못합니다.
 ```
-<form name="register-form" action="서버스크립트파일의위치" method="GET/POST" enctype="">
-	<input type="submit">
-	<div>
-		<label for="register-id">id</label>
-		<input type="text" id="register-id">
-	</div>
-	<div>
-		<label for="register-pass">password</label>
-		<input type="password" id="register-pass">
-	</div>
-	<button type="submit">버튼</button>
-</form>
+<address>
+<a href="mailto:j35148@hanmail.net">예리나 이메일 주소</a>
+</address>
 ```
-* form 속성
-	- name : 서버에 form을 전달할 때 name 값을 통해 정보를 전달하여 구분 지음.
-	- action : 서버스크립트 파일의 목적지 값을 입력.
-	- method : GET - 빠른 서버의 통신이 가능하나, 파일 전달이 안되고 주로 텍스트 위주로 보낼 수 있으며, 보안에 취약함. / POST - 중요한 정보를 넘기거나 복잡한 파일을 전달할 때 쓴다.
-* label : input 요소와 컨텐츠를 같은 값으로 연결시켜준다. but, form 요소 안에서만 쓰인다.
-> <label>ID<input type="text"></label> <!-- 암묵적인 방식 -->
-> <label for="register_id">ID</label><input id="register_id" type="text"> <!-- 명시적인 방식 --><br>
- <br>
+
+* ins insert text ; 불필요한 단어나 문장 대신에 새로운 단어랑 문장을 삽입합니다.
+* del delete text ; 불필요한 단어를 삭제하는 의미입니다.
+
+* frame / frameset / noframes : html 4.01버전에서 쓰이던 코드. 각각의 섹션..프레임을 변경하고 싶을 때 쓰였습니다. frameset에 각각 cols의 넓이를 %로 지정이 가능합니다.
+* iframe
+
+### html5
+* 상위, 하위 호환이 모두 가능함.
+* 독타입 선언이 간소화됨
+* 문자 인코딩도 간소화됨
+* type 선언을 굳이 쓰지 않아도 자동으로 지원이 됨.
+
+* 태그요소 
+	- section article aside nav main ; 섹션요소
+	- header footer ; 굳이 안써도 됩니다. header나 footer 사이에 nav같은 section요소를 넣을 수는 있습니다.
+	- time ; 날짜 정보를 알려줍니다.
+	- datalist
+	- datails & summary ; 요약과 요약에 대한 자세한 정보
+	- figure &figcaption ; 이미지나 도표나 차트를 묶어줍니다. & 이미지 정보
+	- canvas
+
+
+
+* block element의 특징
+	- 개별적으로 스타일설정을 하지 않았다면, 부모 요소 영역만큼 가로 크기가 커진다. (기본 값은 auto)
+	- 요소의 높이 height는 부모와 상관없이 요소가 포함하는 자식 요소들의 크기에 좌우된다.
+	- 별도로 가로 width 세로 height 크기 설정이 가능합니다.
+	- block요소는 내부에 인라인 요소를 감쌀 수 있습니다.
+
+* inline element의 특징
+	- 자신을 포함한 부모 요소의 영역과 상관 없이 자신이 포함하는 자식 요소 또는 텍스트만큼만 가로, 세로 크기를 가진다.
+	- 별도로 가로, 세로 크기 설정이 불가능하다.
+	- 인라인 요소는 내부에 블록 요소를 감쌀 수 없다.(단! 예외 사항: a 요소는 블록요소를 감쌀 수 있다.)
+
+* html5에서는 a 요소가 블록 요소를 감쌀 수 있도록 변경되었지만, 내부에 또 다른 클릭 가능한 버튼 같은 게 존재한다면 문법 오류가 생깁니다.
+
+### css
+* css 기본 문법? ; 선택자 {속성:값;} / 선언문장의 끝에는 반드시 세미콜론(;)을 추가합니다
+* 1em = 16px (브라우저의 기본 렌더링 값)
+
+* css파일을 분리시킬 때 최상단에 `@charset "utf-8";`을 선언해주어야한다. 뒤에 세미콜론이 빠지면 x
+
+* 스타일 모듈 파일 로드
+> link rel 병렬 방식과 달리 @import는 직렬 방식이기 때문에 로드 시간이 오래 걸립니다.
 ```
-<form action="#" method="POST" enctype="#">
-	<fieldset>
-		<legend>register</legend>
-		<div>
-			<label for="register-id">id</label>
-			<input type="text" id="register-id" name="register-id">
-		</div>
-		<div>
-			<input id="gender-male" name="register-gender-a" type="radio" value="1"><label for="gender-male">Male</label>
-			<input id="gender-female" name="register-gender-a" type="radio" value="2"><label for="gender-female">Female</label>
-		</div>
-		<div>
-			<input type-"checkbox" value="sleep" name="register_hobby">잠자기</label>
-			<input type-"checkbox" value="sleep" name="register_book">책읽기</label>
-		</div>
-		<div>
-			<input type="file" name="uploadfile" id="upload" value="업로드">
-		</div>
-		<div>
-			<input type="text" placeholder="j35148" maxlength="10"></div>
-		<div>
-			<input type="email" id="email" placeholder="j35148@email.com">
-		</div>
-		<textarea name="message" id="textarea" cols="30" rows"10"></textarea>
-		<input type="submit" value="전송">
-		<button type="submit">전송</button>
-	</fieldset>
-</form>
+@import url("style.css");
+@import url("common.css");
+@import url("grid.css");
+@import "layout.css";
 ```
-* fieldset : form 안에 들어가는 요소로 특정 필드를 한 그룹으로 묶는 역할을 한다.
-* legend : fieldset의 제목.
-* input 
-	- 타입 
-		+ text : 일반적인 텍스트를 넣는 역할. 
-		> textarea는 여러 줄 여러 칸으로 사용이 가능함. css로 리사이즈를 막을 수 있고, contenteditabel을 true로 맞추면 편집이 가능함.
-		+ password : 텍스트를 입력할 경우 텍스트가 암호화되어 나온다. 비밀번호를 사용할 때 씀.
-		+ radio : 여성/남성 같이 필수로 선택해야하는 항목에 쓰임. 
-		+ checkbox : 다중으로 선택이 가능함. checkbox나 radio는 각각의 인풋요소를 하나의 name값으로 연결 시켜줘야 함.
-		+ file : 파일을 업로드 할 수 있게 함. form method 방식과 함께 생각하기.
-		+ email 
-		+ submit : button type="submit" 과도 교차 사용이 가능함. 
-	- 그 외의 속성 
-		+ disable : 기본 값 고정
-		+ maxlength : 최대 길이 값을 고정.
-		+ placeholder : 예씨를 위한 가이드 텍스트.
-* select : option과 optgroup이 쓰인다.
+* css selector
+> {}모든 요소 선택 (덮어쓰기가 불가능 하기 때문에 주로 초기reset 선언을 할때 쓰입니다.)
 ```
-<select name="job">
-					<option value="">select</option>
-					<!-- value 값이 없는 이유는 아무것도 선택되지 않음을 의미합니다. -->
-					<option value="student" selected>student</option>
-					<!-- selected의 값은 radio의 checked 값처럼 미리 선택되게 만들어 줍니다. -->
-					<option value="instructor">instructor</option>
-					<option value="doctor">doctor</option>
-					<optgroup label="web">
-						<option value="developer">developer</option>
-						<option value="designer">designer</option>
-						<option value="planner">planner</option>
-						<option value="developer">developer</option>
-					</optgroup>
-					<!-- 옵션 그룹을 묶는다. -->
-				</select>
+h1{}
+h1,h2,h3{} (grouping)
+h1 p{}
 ```

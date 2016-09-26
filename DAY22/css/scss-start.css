@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* 
+CSS comment & code
+
+body{
+	margin:0;
+}
+
+// sass singleline comment & code
+body{
+	margin:0;
+}
+
+// 중첩규칙
+.page{
+	.page-header{
+		height:100vh;
+	}
+	.page-navigation ul{
+		padding-left:0;
+		li{
+			list-style:none;
+		}
+	}
+}
+
+// sass singleline comment
+
+// Sass 변수
+$blank: 0;
+
+.wrapper{
+	margin:$blank;
+}
+$gap:20px;
+.unit-3{
+	margin:
+} 
+*/
+.wrapper {
+  width: 10px; }

@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+.clearfix::after{
+	display:block;
+	clear:both;
+	content:'';
+}
+body{
+	height:auto;
+	background-repeat:no-repeat;
+	background-position:100%;
+	background-size:cover;
+	font-family: 'Roboto', sans-serif;
+	color:#fff;
+}
+main{
+	position:relative;
+	height:100vh;
+}
+
+.main-text{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:0 auto;
+	width:75%;
+	transform:translate(-50%, -50%);
+	text-align:center;
+}
+.main-text time{
+	display:block;
+	font-size:6em;
+}
+.main-text strong{
+	font-size:2.5em;
+	font-weight:400;
+}
+main a{
+	color:#fff;
+	text-decoration:none;
+}
+.links{
+	position:absolute;
+	left:15px;
+	top:18px;
+}
+input{
+	width:40%;
+	margin-top:50px;
+	border:none;
+	background:none;
+	border-bottom:2px solid #fff;
+	text-align:center;
+	color:currentColor;
+}
+.weather{
+	position:absolute;
+	right:15px;
+	top:18px;
+}
+.main-bottom{
+	width: 100vh;
+	position:absolute;
+	left:0;
+	bottom:18px;
+}
+.settings{
+	display:inline-block;
+	float:left;
+	margin-left:15px;
+	font-size:12px;
+}
+.cite{
+	display:inline-block;
+	margin-left:50%;
+	transform:translateX(-50%);
+}
+.to-do-list{
+	display:inline-block;
+	float:right;
+	margin-right:15px;
+}
+.main-bottom .none{
+	display:none;
+	position:absolute;
+	left:50%;
+	top:0;
+	transform:translateX(-50%);
+
+
+}
+.main-bottom .cite:hover{
+	transform:translateY(30px);
+}
+.main-bottom .cite:hover+.none{
+	display:block;
+	transition:all 2s;
+}

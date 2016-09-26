@@ -1,0 +1,45 @@
+$my-nickname: "yerina"
+
+
+body
+	&::before,
+	&::after
+		content: $my-nickname
+
+
+%center-pos
+	display: flex
+	justify-content: center
+	align-items: center
+
+
+%align-center-margin
+	margin:
+		left: auto
+		right: auto
+@function em($unit, $base: 16)
+	$unit: $unit/(1px)
+	// unit에 px단위의 값이 들어올 경우, 1px로 나눠서 단위 값을 없애준다!
+	@return $unit/16 * 1em
+	// 결과값 반출
+
+$container-width: 1268px
+$dark-gray: #3d3c31
+$tablet: em(180)
+
+.container
+	@extend %align-center-margin
+	max-width: $container-width
+	min-height: ceil($container-width/2)
+	//ceil 올림 함수
+	// round 반올림 함수
+	// floor 내림 함수
+.page-footer
+	@extend %align-center-margin
+	width: 100vh -20vh
+	@media screen and (min-width: $tablet)
+		width: 90%
+	background-color: $dark-gray
+	color: rgba(lighten($dark-gray, 40%), 0.45)
+	// # hex코드를 rgb로 쉽게 바꿀 수도 있다!
+	/* 안녕! */

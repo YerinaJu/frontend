@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/* em 단위 사용의 어려움 */
+
+html{
+	font-size:100%; /* 기본 16px */
+}
+
+/* 
+미디어 기술 사용
+CSS3 미디어쿼리;  @media 환경 and (조건1) and (조건2)
+중단점 설계
+(1) - 600px - (2) - 1000px - (3)
+*/
+/*미디어에서 only를 쓰는 이유는 ie8이하에서 media쿼리를 지원하지 않기 때문에 의도치 않은 오류를 막기 위해서 원천봉쇄 시키는 것입니다 ^-^*/
+@media only screen and (max-width:600px){
+	/*미디어 쿼리 안에서 em단위는 rem처럼 기본 값을 16px으로 먹고 들어갑니다.*/
+	body::before{
+		content:'스크린의 폭이 600px보다 작습니다.';
+	}
+	body{
+		background-color:#000;
+	}
+}
+
+@media only screen and (min-width:601px) and (max-width:1000px){
+	body::before{
+		content:'스크린의 폭이 600px보다 크고 1000px보다 작습니다.';
+	}
+	body{
+		background-color:#555;
+	}
+}
+
+@media only screen and (min-width:1000px){
+	body::before{
+		content:'스크린의 폭이 1000px보다 큽니다.';
+	}
+	body{
+		background-color:#fff;
+	}
+}
+
+body{font-size:87.5%;} /* 16px*0.875 = 14px */
+
+/* box모델 */
+
+div{
+	width: 50%;
+	margin:30px auto;
+	padding:5%;
+}
+
+.wrapper-parent{
+	font-size:40px;
+	/*1em = 14px*/
+	font-size:2.5em; /* 14*2.5 = 35px */
+	font-size:2.5rem;
+	background-color:#7045cf;
+}
+.parent{
+	font-size:30px;
+	font-size:1.88em; /* 35*1.88 */
+	font-size:1.88rem;
+	background-color:#724fb7;
+}
+.child{
+	font-size:20px;
+	font-size:1.25em;
+	font-size:1.25rem;
+	background-color:#9077c4;
+}
+.inner-child{
+	font-size:10px;
+	font-size:0.63em;
+	font-size:0.63rem;
+	background-color:#b0a6c4;
+}

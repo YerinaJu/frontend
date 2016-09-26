@@ -1,0 +1,88 @@
+.page
+    .page-header
+        height: 20vh
+        position: relative
+        .brand
+            overflow: hidden
+            position: absolute
+            left: 100%
+        a 
+        	color: red
+        	&:hover
+        		background-color: blue
+        	&:focus
+        	&:active
+        		outline: none
+        	& span
+        		font-weight: 900
+
+/* 중첩 속성 */
+.page
+	margin:
+		top: 20px
+		right: 10px
+		bottom: 0px
+		left: auto
+	font:
+		size: 1rem
+		weight: 600
+		style: italic
+		variant: small-caps
+		family: "Spoca Han Sans", sans-serif
+	border:
+		top: 
+			color: red
+			style: solid
+			width: 2px
+		bottom:
+			color: transparent
+			style: solid
+			width: 2px
+		right:
+			color: hotpink
+			style: dashed
+			width: 2px
+
+
+// 이건 미디어쿼리
+
+aside.page-sidebar
+	float: left
+	width: 100%
+	@media (min-width: 600px)
+		width: 45%
+	@media (min-width: 1100px)
+		width: 33.33333%
+
+$button-radius: 4px
+$button-align: center
+$button-gap: 0.6em
+$button-default-color: #eaeaea
+$button-primary-color: #2789d3
+$button-secondary-color: #e30d4f
+
+.button
+	display: inline-block
+	padding: $button-gap 1em
+	background-color: $button-default-color
+	text-align: $button-align
+	&.primary
+		background: $button-primary-color
+		color: lighten($button-primary-color, 30%)
+	&.secondary
+		background: $button-secondary-color
+		color: lighten($button-secondary-color, 30%)
+	&.round
+		border-radius: $button-radius
+	&.rounder
+		border-radius: $button-radius *2
+	&.roundest
+		border-radius: $button-radius * 4
+.hello
+	@extend .button
+
+.button-error
+	@extend .button
+	bacgkround: #f00
+	color: #fff
+	vorder: 2px soldi darken(#f00, 42%)

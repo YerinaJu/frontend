@@ -1,0 +1,25 @@
+body::before, body::after {
+  content: "yerina";
+}
+
+.container, .page-footer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  max-width: 1268px;
+  min-height: 634px;
+}
+
+.page-footer {
+  width: 100vh -20vh;
+  background-color: #3d3c31;
+  color: rgba(168, 166, 146, 0.45);
+}
+
+@media screen and (min-width: 11.25em) {
+  .page-footer {
+    width: 90%;
+  }
+}

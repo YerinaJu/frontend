@@ -1,0 +1,23 @@
+// 믹스인 ; 코드를 섞다
+
+@mixin box-sizing($box){
+	-webkit-box-sizing: $box;
+	-moz-box-sizing: $box;
+	box-sizing: $box;
+}
+
+@mixin size($width: null, $height: null){
+	width: $width;
+	height: $height;
+}
+
+@mixin triangle($color, $width){
+	width:0;
+	height:0;
+	border-bottom:$width $color;
+	border-left:$type2;
+	border-right:$type3;
+}
+@mixin type($type...){
+	margin:$type;
+}

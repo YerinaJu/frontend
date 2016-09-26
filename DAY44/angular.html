@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>앵귤러모듈/컨트롤러</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="modules/controllers/tabController.js"></script>
+</head>
+<body data-ng-app="ngApp">
+	<!-- <div class="ng-template" data-ng-controller="ngController">
+		<h1 class="ng-template-headline"></h1>
+		<button 
+			data-ng-click="setContent()"
+			type="button"
+			class="fire-set-content-btn">눌러라</button>
+		<p>{{mCtrl.content}}</p>
+		<section class="other-ctrl" data-ng-controller="otherCtrl">
+			<article>
+				<h3 title="{{init_value}}">{{init_value}}</h3>
+			</article>
+		</section>
+	</div> -->
+	<div class="tab-menu" data-ng-controller="tabController">
+		<!-- tab handlelist -->
+		<div class="tab-control" role="tablist">
+			<button type="button" role="tab" class="tab-handle">shoes</button>
+			<button type="button" role="tab" class="tab-handle">bag</button>
+			<button type="button" role="tab" class="tab-handle">hat</button>
+		</div>
+
+		<!-- tab content list -->
+		<div class="tab-content" role="tab-panel">
+			<h2>shoes</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+		<div class="tab-content" role="tab-panel">
+			<h2>shoes</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+		<div class="tab-content" role="tab-panel">
+			<h2>shoes</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+
+
+	</div>
+<script>
+(function(global, ng, jq){
+	'use strict';
+	전역에 바로 노출
+
+	angular 모듈 정의
+	angular 모듈을 정의할 때 dependency injection(남들이 만들어 둔 플러그인 같은거)을 사용한다
+	// dependency injection에 모듈을 넣으면 배열 처럼 삽입이 된다.
+	var app = angular.module('ngApp', []);
+
+	//angular 모듈 객체의 controller() 메소드를 사용하여 컨트롤러 정의
+	app.controller('ngController', function(){
+
+		 var content_text = 'AngularJS Application is Awesome!!';
+    // $scope 객체의 속성/메소드 정의
+	    $scope.content = '';
+	    $scope.setContent = function() {
+	      // console.log(this === $scope);
+	      this.content = content_text;
+	    };
+	    ////////////
+	    // jQuery //
+	    ////////////
+	    var ngTHeadline = jq('.ng-template-headline');
+	    ////////
+	    // JS //
+	    ////////
+	    content_text = content_text.split(' ').slice(-1).toString().toLowerCase().replace('!!', '');
+	    ngTHeadline.text( content_text );
+	});
+
+	global.moduleController = function(){
+		// $scope 객체(중재자 역할, View - Controller 사이의 접착제)
+		// console.log('scope',$scope);
+		console.log('this',this);
+		console.log('version', angular.version.full);
+
+		//[v 1.2.x, IE 8 호환]
+		// jQuery와 유사한 jqlite를 angular 컨트롤러 내부에서 사용하는 예
+		// jqlite는 제이쿼리의 모든 기능을 쓸 수 없다
+		console.log('element',angular.element);
+		// 앵귤러는 DOM제어를 개별적으로 가지지 않기 때문에 jq 라이트버전을 가져다 씁니당 
+		var template_headline = document.querySelector('.ng-template-headline');
+		// angular.element는 해당 객체를 앵귤러 객체로 만들어주..? 는 것 같다!
+		template_headline = angular.element(template_headline);
+		console.log('template_headline', template_headline);
+		template_headline.addClass('test').text('똑같다능똑같다능~~~~~~~');
+		var template_headline_content = template_headline.text();
+
+
+		//$scope 객체의 속성
+		// 앵귤러의 $와 제이쿼리의 $는 다르다! 같이 써도 충돌 나지 않음
+		this.content = '';
+		this.setContent = function(){
+			this.content = template_headline_content;
+		}
+
+
+		angular.module('ngApp').controller('otherCtrl', function($scope){
+			$scope.init_value = '';
+			if(jq.type($scope.init_value) === 'null'){
+				$scope.init_value = 'ohterController';
+			} else {
+				$scope.init_value = 'not initialization';
+			}
+		})
+})(this,this.angular, this.jQuery)
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+@import mixins
+
+/* Sass 연산자 */
+$base-font-size: 16px
+
+$base-line-height: $base-font-size * 1.5
+//스포카 웹폰트설정
+// [ko] "Spoqa Han Sans"
+// [ja] "Spoqa Han Sans JP"
+// $spoqa-font-family: "Spoqa Han Sans JP"
+$language: ko
+$font-raleway: "Raleway"
+
+// 웹 폰트
+// @import url("http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-#{$language}.css")
+@import url(https://fonts.googleapis.com/css?family=#{$font-raleway})
+
+body
+	font: #{$base-font-size}/#{$base-line-height} #{$font-raleway}, sans-serif
+	line-height: $base-line-height
+
+.p100
+	font-weight: 100
+
+// 보간법!!
+$selector: yerina
+$pseudo-name: after
+#area .#{$selector}
+	margin:
+		left: 20%
+		right: 20%
+	&::#{$pseudo-name}
+		display: block
+		clear: both
+		content: ''
+
+// 보간법 + 미디어쿼리
+$media-md: "screen and (min-width: 760px)"
+$media-lg: "screen and (min-width: 1220px)"
+$media-print: "not screen and (min-width: 21cm)"
+
+.#{$selector}
+	@media #{$media-md}
+		display: flex
+		flex-flow: row-recerse wrap
+	@media #{$media-lg}
+		display: block
+	@media #{$media-print}
+		background: #fff !important
+		color: #000 !important
+		// 프린트 환경에서는 반드시 잉크 낭비로 인해 흰 배경에 검은 글씨여야 하니까 접근성 관점 등에서 important를 허용한다
+
+
+header
+	@include box-sizing(border-box)
+main
+	@include box-sizing(content-box)
+footer
+	@include box-sizing(padding-box)
+
+.p400
+	@include type(10px,20px,30px,40px)
+.p100
+	color: red
+	&:hover
+		color: blue
+	.cover &
+		background-color: red
+
+
+.class
+	color: red
+	&.id
+		overflow: hidden
+	& .class-name
+		color: blue
+
+
+
+

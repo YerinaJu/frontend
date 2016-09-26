@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.css-box{
+	width:200px;
+	padding:40px;
+	background-color:lightgreen;
+	border-width:10px;
+	border-style:dotted;
+	border-top-color:#fff;
+	border-left-color:orange;
+	border-right-color:red;
+	border-bottom-color:pink;
+}
+
+/* 마진이 상하 방향으로 접혀지는 현상 */
+
+h1{
+	margin-bottom:1.88em;
+	font-weight:bolder;
+	font-weight:900; /*100 - 400(normal) - 700 (bold) - 900(bolder)*/
+	/*하위 브라우저에서는 숫자를 지원하지 않는 경우를 위해 고려해야함.*/
+	/*font-size:32px;
+	font-size:2rem;*/
+	font-size:2.2em; (px값으로 일일히 넣어주는 거 보다, em단위로 계산을 해서 해주는 게 상대적으로 좋습니다. 브라우저마다 반올림등을 할 수 있기 때문이져 / 그러나 현 요소의 font-size에 영향을 받게 되니 사용 시 주의@# )
+}
+p{
+	color:#323130;
+	font-size:0.875em; /* 14px */
+}
+
+
+
