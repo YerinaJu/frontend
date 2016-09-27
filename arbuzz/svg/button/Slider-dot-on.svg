@@ -1,0 +1,6 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="11" viewBox="0 0 11 11">
+<g id="Slider-dot-lg"  opacity="0.502">
+<path id="Slider-dot-lg-fill" d="M5.500,2.000 C7.433,2.000 9.000,3.567 9.000,5.500 C9.000,7.433 7.433,9.000 5.500,9.000 C3.567,9.000 2.000,7.433 2.000,5.500 C2.000,3.567 3.567,2.000 5.500,2.000 z" fill="#3C3D48" />
+<path id="Slider-dot-lg-stroke" d="M5.500,1.000 C7.985,1.000 10.000,3.015 10.000,5.500 C10.000,7.985 7.985,10.000 5.500,10.000 C3.015,10.000 1.000,7.985 1.000,5.500 C1.000,3.015 3.015,1.000 5.500,1.000 z" fill="none" stroke="#3C3D48" stroke-opacity="1.000" stroke-width="2" stroke-linejoin="round" />
+</g>
+</svg>

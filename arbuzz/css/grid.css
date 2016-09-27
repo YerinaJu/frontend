@@ -1,0 +1,117 @@
+.grid::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 940px;
+  height: 200vh;
+  transform: translate(-50%);
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.4) 60px, transparent 60px, transparent 60px, transparent 80px);
+  background-size: 80px 1px;
+  content: '';
+  z-index: 1000; }
+
+.grid::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+.grid:hover::before{
+  display: none;
+}
+[class*="col-"] {
+  float: left;/*
+  margin-left: 10px;
+  margin-right: 10px; */}
+
+.col-1 {
+  width: 60px; }
+.col-2 {
+  width: 140px; }
+
+.col-3 {
+  width: 220px; }
+
+.col-4 {
+  width: 300px; }
+
+.col-5 {
+  width: 380px; }
+
+.col-6 {
+  width: 460px; }
+
+.col-7 {
+  width: 540px; }
+
+.col-8 {
+  width: 620px; }
+
+.col-9 {
+  width: 700px; }
+
+.col-10 {
+  width: 780px; }
+
+.col-11 {
+  width: 860px; }
+
+.col-12 {
+  width: 940px; }
+/*push, pull module*/
+
+.grid [class*="push-"]{position:relative;}
+.grid [class*="pull-"]{position:relative;}
+.grid .push-1{left:60px;}
+.grid .push-2{left:140px;}
+.grid .push-3{left:220px;}
+.grid .push-4{left:300px;}
+.grid .push-5{left:380px;}
+.grid .push-6{left:460px;}
+.grid .push-7{left:540px;}
+.grid .push-8{left:620px;}
+.grid .push-9{left:700px;}
+.grid .push-10{left:780px;}
+.grid .push-11{left:860px;}
+.grid .push-12{left:940px;}
+
+.grid .pull-1{left:60px;}
+.grid .pull-2{left:140px;}
+.grid .pull-3{left:220px;}
+.grid .pull-4{left:300px;}
+.grid .pull-5{left:380px;}
+.grid .pull-6{left:460px;}
+.grid .pull-7{left:540px;}
+.grid .pull-8{left:620px;}
+.grid .pull-9{left:700px;}
+.grid .pull-10{left:780px;}
+.grid .pull-11{left:860px;}
+.grid .pull-12{left:940px;}
+
+/*prefix, suffix module*/
+.grid .prefix-1{left:60px;}
+.grid .prefix-2{left:140px;}
+.grid .prefix-3{left:220px;}
+.grid .prefix-4{left:300px;}
+.grid .prefix-5{left:380px;}
+.grid .prefix-6{left:460px;}
+.grid .prefix-7{left:540px;}
+.grid .prefix-8{left:620px;}
+.grid .prefix-9{left:700px;}
+.grid .prefix-10{left:780px;}
+.grid .prefix-11{left:860px;}
+.grid .prefix-12{left:940px;}
+
+.grid .suffix-1{left:60px;}
+.grid .suffix-2{left:140px;}
+.grid .suffix-3{left:220px;}
+.grid .suffix-4{left:300px;}
+.grid .suffix-5{left:380px;}
+.grid .suffix-6{left:460px;}
+.grid .suffix-7{left:540px;}
+.grid .suffix-8{left:620px;}
+.grid .suffix-9{left:700px;}
+.grid .suffix-10{left:780px;}
+.grid .suffix-11{left:860px;}
+.grid .suffix-12{left:940px;}
