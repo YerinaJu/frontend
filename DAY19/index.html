@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Holzweiler</title>
+	<script src="../resources/library/jquery-3.1.0.min.js"></script>
 	<link rel="stylesheet" href="../resources/initialization/common.css">
 	<link rel="stylesheet" href="../resources/initialization/normalize.css">
 	<link rel="stylesheet" href="css/holzweiler.css">
@@ -88,9 +89,19 @@
 	<section id="holzweiler-notice" class="fixed-sticky-bottom">
 	    <h2 class="readable-hidden">Notice</h2>
 	    <a href="">New styles have arrived - take a look at our lambswool scarves here!</a>
-	    <button type="button" class="holzweiler-close-button">
-	    	<span class="readable-hidden">Close</span>
+	    <button type="button" class="holzweiler-close-button" aria-label="close">
 	    </button>
   </section>
+  <script>
+  	(function(global, $){
+  	  'use strict';
+
+  	  var $closeBtn = $('.holzweiler-close-button');
+  	  $closeBtn.on('click', function(event){
+  	  	event.preventDefault();
+  	  	$('.fixed-sticky-bottom').css('display','none');
+  	  })
+  	}(this, this.jQuery))
+  </script>
 </body>
 </html>
